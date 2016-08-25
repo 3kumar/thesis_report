@@ -1,0 +1,36 @@
+\BOOKMARK [0][]{chapter.1}{1 Introduction}{}% 1
+\BOOKMARK [0][]{chapter.2}{2 Basics of Word2Vec and Echo State Network}{}% 2
+\BOOKMARK [1][-]{section.2.1}{2.1 Word2Vec}{chapter.2}% 3
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 CBOW Model}{section.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.1.2}{2.1.2 Skip-gram Model}{section.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.1.3}{2.1.3 Properties of Word2Vec embeddings}{section.2.1}% 6
+\BOOKMARK [1][-]{section.2.2}{2.2 Echo State Network \(ESN\)}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 ESN Architecture}{section.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Training ESN}{section.2.2}% 9
+\BOOKMARK [0][]{chapter.3}{3 Previous Work and Open Issues}{}% 10
+\BOOKMARK [1][-]{section.3.1}{3.1 Grammatical Construction and Thematic Role Assingment}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Limitation of using grammatical construction}{section.3.1}% 12
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Research Hypothesis}{section.3.1}% 13
+\BOOKMARK [0][]{chapter.4}{4 Approaching Word2Vec and ESN Language Model}{}% 14
+\BOOKMARK [1][-]{section.4.1}{4.1 Proposed Model}{chapter.4}% 15
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Model Variant-1}{section.4.1}% 16
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Model Variant-2}{section.4.1}% 17
+\BOOKMARK [1][-]{section.4.2}{4.2 Comparision of Model Variants}{chapter.4}% 18
+\BOOKMARK [1][-]{section.4.3}{4.3 Dataset and pre-processing}{chapter.4}% 19
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Corpus For TRA Task}{section.4.3}% 20
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Corpus For Training Word2Vec Model}{section.4.3}% 21
+\BOOKMARK [1][-]{section.4.4}{4.4 Word Embeddings}{chapter.4}% 22
+\BOOKMARK [0][]{chapter.5}{5 Experiments and Results}{}% 23
+\BOOKMARK [1][-]{section.5.1}{5.1 Input and Ouput Coding}{chapter.5}% 24
+\BOOKMARK [1][-]{section.5.2}{5.2 Experiments}{chapter.5}% 25
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Experiment-1: Learning thematic roles}{section.5.2}% 26
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Experiment-2: Generalization Capabilities}{section.5.2}% 27
+\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Experiment-3: Effect of Corpus structure}{section.5.2}% 28
+\BOOKMARK [2][-]{subsection.5.2.4}{5.2.4 Experiment-4: Effect of Reservoir size}{section.5.2}% 29
+\BOOKMARK [2][-]{subsection.5.2.5}{5.2.5 Experiment-5: Effect of Corpus size}{section.5.2}% 30
+\BOOKMARK [2][-]{subsection.5.2.6}{5.2.6 Experiment-6: Online reanalysis of sentences}{section.5.2}% 31
+\BOOKMARK [0][]{chapter.6}{6 Conclusion And Future Work}{}% 32
+\BOOKMARK [0][]{appendix.A}{A Nomenclature}{}% 33
+\BOOKMARK [0][]{appendix.B}{B Additional Proofs}{}% 34
+\BOOKMARK [0][]{appendix.C}{C Complete Simulation Results}{}% 35
+\BOOKMARK [0][]{appendix.C}{Bibliography}{}% 36

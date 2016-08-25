@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{xavier:2013:RT}
+Xavier Hinaut and Peter~Ford Dominey.
+\newblock Real-time parallel processing of grammatical structure in the
+  fronto-striatal system: A recurrent network simulation study using reservoir
+  computing.
+\newblock {\em PLoS ONE}, 8(2):1--18, 02 2013.
+
+\bibitem{Koomen:2005}
+Peter Koomen, Vasin Punyakanok, Dan Roth, and Wen-tau Yih.
+\newblock Generalized inference with multiple semantic role labeling systems.
+\newblock In {\em Proceedings of the Ninth Conference on Computational Natural
+  Language Learning}, CONLL '05, pages 181--184, Stroudsburg, PA, USA, 2005.
+  Association for Computational Linguistics.
+
+\bibitem{pradhan:2005}
+Sameer Pradhan, Kadri Hacioglu, Wayne Ward, James~H. Martin, and Daniel
+  Jurafsky.
+\newblock Semantic role chunking combining complementary syntactic views.
+\newblock In {\em Proceedings of the Ninth Conference on Computational Natural
+  Language Learning}, CONLL '05, pages 217--220, Stroudsburg, PA, USA, 2005.
+  Association for Computational Linguistics.
+
+\bibitem{end-to-end}
+Jie Zhou and Wei Xu.
+\newblock End-to-end learning of semantic role labeling using recurrent neural
+  networks.
+\newblock In {\em Proceedings of the Annual Meeting of the Association for
+  Computational Linguistics}, 2015.
+
+\end{thebibliography}

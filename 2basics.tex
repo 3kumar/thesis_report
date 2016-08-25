@@ -1,0 +1,179 @@
+\chapter{Basics of Word2Vec and Echo State Network}\label{basics}
+
+\section{Word2Vec}
+Word2vec is a neural model proposed by Tomas Miklov that takes in input a large text data to generate the distributed word  embedding of the words present in text and also preserve the linear regularities among words[]. In other words, it maps the words into a continuous vector space where semantically related words are placed closed to each other in the vector space. Earlier the words have been treated as discrete atomic symbols in all traditional NLP system, where each word were represented in a localist fashion. Localist representation of words does not contain any semantic or syntactic information of the word it is encoding and thus depriving the NLP systems to utilize this information while processing. Word2vec neural word embedding overcomes this issue and capture the semantics and syntactic information of the word in a computationally-efficient manner. For learning word embedding two neural architecture were proposed, the Continuous Bag Of Word (CBOW) and Skip-Gram. Both the models are architecturally same i.e. both have three layers, the input layer, hidden layer and an output layer, but have different training objectives. The architecture of both the models is shown in [fig]. In the next sections we give a brief overview of  CBOW model and skip-gram model. However we used skip-gram model in our work because it was proven that it produce better word-embeddings as compared to CBOW[ref main paper].
+
+\subsection{CBOW Model}
+
+CBOW  model are three layered neural model with the training objective to predict a target word (e.g. Peter) given some context words (John gave ball to …)[ref]. Figure  shows the network architecture with a simplified case of one context word. The model is trained on the dataset having a vocabulary size V in an unsupervised way to achieve the objective. The hidden layer is of size N, the dimensions of desired word embedding, and neurons in both the adjacent layer i.e.  input and output layers,  are fully connected to hidden layer neurons. The input to the network is the context word $w_c {\in} \mathbb{R}^{V}$ represented using localist representation where only one unit $x_c$ at index c will be 1 out of V units $w_c=[{x_1,.....,x_V}]$ and all other units will be 0[ref].The activation of hidden layer is then given by :
+
+\begin{equation}\label{eqn:hidden_act}
+	h = W^T . w_c= W_{(c,:)}=v_{c}
+\end{equation}
+
+where $W {\in} \mathbb{R}^{V{\times}N}$ is the weight matrix from input to hidden layer and $v_{c}$ is the vector  embedding of the context word $w_c$. Eqn. \ref{eqn:hidden_act} basically copies the $c^{th}$ row of weight matrix W on the hidden layer as hidden layer activation function is linear. 
+
+A score $u {\in}R^V$ is then calculated for all the target words in the Vocabulary, which is essentially the compatibility of a word $w_i$ given the context word $w_c$.
+
+\begin{equation}
+\begin{split}
+		 u &={W^{'}} ^ T . h \\
+	   	   &= {W^{'}}^T. v_{c}	
+\end{split}
+\end{equation}
+
+\begin{equation}
+	u_i = {W^{'}_i}^T. v_{c}
+\end{equation}
+
+where $u_i$ gives the score of $i^{th}$ word,$w_{i}$, for i = 1,2...V. $W^{'}{\in} \mathbb{R}^{N{\times}V} $ is the weight matrix between hidden and output layer. ${W^{'}_i}$ is the $i^{th}$ column vector of matrix $W^{'}$.  
+The computed scores are then converted to posterior probabilities by output neurons with softmax activation function. Thus aliasing ${W^{'}_i}$ as $v^{'}_{i}$ we get output probabilities as: 
+
+\begin{equation}
+\begin{split}	
+y_i &= P(w_i | w_c) = \frac {\exp(u_i)} {\sum_{i' {\in} V} \exp (u_{i^{'}})}\\
+	&= \frac {\exp({v^{'}_{i}}^T.v_{c})}{\sum_{i' {\in} V}\exp({v^{'}_{i^{'}}}^T.v_{c})}
+\end{split}
+\end{equation}
+where $y_i$ is the probability of a word given the context word.
+
+The training objective is then achieved by maximizing the log likelihood of actual target word $(w_{t})$ given the context words. So the cost functions then can be written as:
+
+\begin{equation}
+  \begin{split}
+  	J_{ML} &= max \log P(w_t | w_c) \\
+		   &= {v^{'}_{t}}^T.v_{c}- \text{ log} \sum_{i' {\in} V} {\exp({v^{'}_{i^{'}}}^T.v_{c})}
+  \end{split}
+\end{equation} 
+
+In case of multiple context words is input to the network, the equation 1 only change to:
+
+\begin{equation}
+h= \frac {1}{K} .(v_{c_1}+v_{c_2}+.......+v_{c_K}) 
+\end{equation}	
+where k is the size of context window. This equation averages vector embeddings of all context words.
+
+\subsection{Skip-gram Model}
+
+In the Skip-Gram model training objective is reversed from that of CBOW model. In other words, the objective is to learn the vector representation of the word that is good in predicting the context words. More specifically given a target word sequence ${w_1,.....w_V}$, the objective is to maximize the average log probability 
+
+\begin{equation}
+\frac {1}{V}\sum_{t=1}^{V} \sum_{{-c \leq j \leq c},{j \neq 0}} {log\ P(w_{t+j}|w_t)}
+\end{equation}
+where c is the size of context window, $P(w_{t+c}|w_t)$ is the probability of context word $w_{t+c}$ given the target word $w_t$. This is measured using softmax function as:
+
+\begin{equation}
+p(w_{t+j}|w_t)=\frac {\exp({{v^{'}_{t+j}}^{T}}.{v_t})}{\sum_{w {\in}V} \exp({{v^{'}_{w}}^{T}}.{v_t})}
+\end{equation}
+
+where ${v^{'}_{t+j}}$ and ${v_t}$ are the vector representation of word $w_{t+j}$ and $w_{t}$ respectively.
+
+Calculating the full softmax is computationally expensive as it need to compute and normalize probability for every other word $w$ in the vocabulary V for a given input word $(w_{c} for CBOW or w_{t} for skip-gram)$ at every training step. Thus negative sampling was proposed for learning the word embeddings[ref].
+
+\subsubsection{Skip-gram with negative sampling}
+
+For learning word features full probabilistic models was not required. So in skip-gram negative sampling is used for approximation of word features. This technique treats feature learning as a binary classification(logistics regression) problems. The model is thus trained to distinguish the target word from k imaginary noise words $w_{noise}$, in the same context. Thus log probability $p(w_{t+j}|w_t)$ is approximated by:
+
+\begin{equation}
+p(w_{t+j}|w_t)=log\ \sigma({{v^{'}_{t+j}}^{T}}.{v_t})\ +\  \sum_{w_{noise}{\in}N_{k}} \log\ \sigma({{v^{'}_{noise}}^T}.v_{t})
+\end{equation}
+
+where $\sigma(x)=1/(1+\exp(-x))$, and $N_k$ is the set of k noise word compared to corresponding context word $w_{t+j}$.
+
+The objective function is thus optimized using stochastic gradient descent to learn the good word features.
+
+\subsection{Properties of Word2Vec embeddings}
+
+Although the word2vec model is simple in the architecture and learning, it produces word vector embedding which surprisingly encodes several linguistic regularities and patterns [ref -main paper]. More importantly it is astonishing because the network was not explicitly trained for these linguistic properties (see fig \ref{fig:sem_rel} \ref{fig:w2v_translation}). The distributed word embeddings encodes semantic and syntactic properties of the words[ref word2vec 2013] as a constant vector offset between a pair of words sharing a specific relationship. For example the word embeddings $"King - Queen \approx Man - Woman"$, $"Apples - Apple \approx Cars - Car"$.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\linewidth]{linear-relationships}
+\caption{\textbf{Word2vec Semantic regularities:} Description goes here.}[ESN9]
+\label{fig:sem_rel}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\linewidth]{word2vec_translation}
+\caption{\textbf{Word2Vec Translation Property:} Description goes here [ESN9]}
+\label{fig:w2v_translation}
+\end{figure}
+
+The another interesting property is that the the semantically related words are placed close to each other in word vector space, thus forming clusters of semantically related words. It was also observed the word embeddings of similar words in different languages have same geometrical arrangement in the respective language word embedding space. Thus it is also possible to learn linear mapping between different embedding space by vector rotation and scaling. Several other regularities can also be captured by performing basic linear operation on word-embeddings. 
+
+\section{Echo State Network (ESN)}
+
+Echo State Network (ESN) is a network with a new viewpoint on Recurrent Neural Network (RNN). It is a discrete time continuous state recurrent neural network introduced by Herbert Jaeger in 2001[ref] and is believed to closely resemble the learning mechanism in biological brains. ESN is found to be computationally simple and inexpensive to process the temporal/sequential data [6]. The main idea of ESN is to operate the random, large, fixed RNN with the input signal and the non-linear response generated by each neuron of the RNN is collectively combined with the desired output signal using regression to learn the output weights.
+
+\subsection{ESN Architecture}
+
+ESN is surprisingly efficient variant for RNN training (see fig. \ref{fig:esn_arch}). In the standard RNN all the weights are required to be tuned even-though it was shown that RNN works well enough even without full adaptation of weights. The classical ESN mainly contains three layers, input layer, the hidden layer (also known as reservoir) and the readout layer. The input layer is fully connected to the hidden layer and both the hidden layer and the input layer is connected to the output layer. The output layer is fully connected back to the hidden layer. However the connection from input to output layer and output layer to hidden layer is optional and depends on the task. 1 (add a foot note that we don't need these weights in our task)
+
+The weights from input to reservoir (i.e. $W^{in}$) and from reservoir to reservoir (i.e.
+$W^{res}$), are sparsely and randomly initialized and more crucially remains untrained during training.The non-zero element in sparse input weight matrix $W^{in}$ and reservoir weight matrix $W^{res}$ are generated from uniform or normal distribution.The weights from the reservoir to output layer (i.e. $W^{out}$) are the only weights learned during supervised training. For ESN approach to work the reservoir should possess the Echo State Property. Echo state property says that if a long input sequence is given to the reservoir the reservoir will end up in the same state irrespective of the initial reservoir state, in other word the reservoir states 'echoes' the input sequence and the effect of previous reservoir state and the previous input on the future reservoir states should vanish gradually [ref]. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\linewidth]{esn_architecture}
+\caption{\textbf{Architecture of classical ESN:} The reservoir is the recurrent neural network with N units and initialized with random connection. The reservoir is provided input from the input u(n) and y(n) from the input and output neurons  respectively. The input weights Win from input and Wback from output neurons are also randomly initialized and stays static during learning. The output  weight from reservoir to output unit is learned by the network.[ESN9]}
+\label{fig:esn_arch}
+\end{figure}
+
+To ensure the echo state property in ESN,firstly,the reservoir weights matrix $W^{res}$ and the input weights matrix $W^{in}$ are often generated sparsely and randomly from a normal or uniform distribution i.e. most of the elements in these matrices will be zero.
+The input weight matrix is however a bit more denser than the reservoir weight matrix.
+The sparsely generated random reservoir weights matrix $W^{res}$ is often scaled such that its spectral radius $\rho(W^{res})$ i.e. largest absolute eigenvalue, is less than one. To scale the randomly generated $W^{res}$ matrix, it is first divided by its spectral radius and then multiplied with desired spectral radius.
+
+\begin{equation}\label{eqn:res_scaling}
+W_{new}^{{res}}=\gamma \frac{W^{res}}{\rho(W^{res})}
+\end{equation}
+
+where $W_{_{new}}^{{res}}$ is the scaled reservoir weight matrix, $0 < \gamma < 1$ is the desired spectral radius and $\rho(W^{res})$ is the spectral radius of randomly generated reservoir Matrix $W^{res}$.
+
+It is also argued that the $\rho(W^{res}) < 1 $ is not a necessary condition for ESN to have the echo state property and can be achieved even when $\rho(W^{res}) > 1$ [ref]. Intuitively, the spectral radius is a crude measure of the amount of memory the reservoir can hold, the small values meaning a short memory, and the large values a longer memory, up to the point of over-amplification when the echo state property no longer holds. [practical esn]. The input weights are also scaled to regulate the non-linearity in reservoir activations. A very high input scaling let the reservoir behave in highly non-linear manner (because of tanh activation function) whereas a very small input scaling is used wherever linearity is required in a task [ref].
+
+\subsection{Training ESN}\label{ssec:esn_training}
+
+ESN can be thought of as a supervised machine-learning problem, where for a given training input signal $\textit{u(n)} \in \mathbb{R}^{N_u}$, corresponding teacher signal $\textit{y(n)} \in \mathbb{R}^{N_y}$ at time-step 'n' is also provided. Here n = 1,2...,T is the discrete time step for sequence of length T. The main objective of ESN approach is to learn a model which outputs $\textit{y'(n)}$, such as to minimize the error measure E(y',y) on the training data and also on the unseen data. The error measure is often the Root-Mean-Square-Error (RMSE).
+
+\begin{equation}\label{eqn:rmse}
+E(y',y)= \frac{1}{N_{y}}\\
+\sum^{N_y}_{i=1}\\
+{\sqrt{\frac{1}{T}\\
+\sum^{T}_{n=1}\\
+{{(y^{'}_i\left(n\right)-y_i(n))}^2}}}\\
+\end{equation}
+
+ESN is initialized with a reservoir of size $N_{x}$ containing leaky-integrated discrete-time continuous-value neurons with tanh activation function. It is also recommended to use the reservoir as big as possible and also computationally affordable[ref]. The bigger the reservoir size, the more the input signal gets non-linearly expanded and easier it will be to find linear combination with the desired output signal [ref]. It is also advisable to proper regularization to avoid over- fitting. The reservoir weight and the input weights are also initialized. The training data $\textit{u(n)}$ is then input to the reservoir step by step which drives the reservoir. The reservoir then generate a sequence $\textit{x(n)}$ of $N_{x}$-dimensional reservoir states which is non-linear high dimensional expansion of the input signal $\textit{u(n)}$ [6]. The reservoir activation and reservoir state update is computed using following recursive equations:
+
+\begin{equation} \label{eqn:res_update}
+x'(n) =\textit {tanh } ( W^{res}x(n-1)+W^{in}.u(n))
+\end{equation}
+
+\begin{equation} \label{eqn:res_state}
+x(n) =\textit (1-\alpha)x(n-1)+\alpha x'(n)
+\end{equation}
+
+where $\textit{ x(n)}$ is the vector of reservoir neuron's activations and $\textit{ x'(n)}$ is its update at time step $\textit{n}$. tanh is reservoir neuron activation function, $ W^{in} \in \mathbb{R}^{{N_x} \times{N_u}}$ and $ W^{res} \in \mathbb{R}^{{N_x} \times{N_x}} $ are input weights and reservoir weights matrices respectively, $\alpha \in (0,1]$ is leaking rate of neurons.  
+
+The leaking rate, $\alpha$ , regulates the speed of reservoir update dynamics in discrete time[ref-pg].Smaller value of also induces slow reservoir dynamics thus ensuring the long short-term memory in ESN.The reservoir activation states are accumulated for an input sequence for regression with the teacher output. The linear readout weights are then learned using equations:
+
+\begin{equation}\label{eqn:esn_output}
+y(n)=\textit W^{out}x(n)
+\end{equation}
+
+where $y(n) \in \mathbb{R}^{N_y}$ is output of the network and $W^{out} \in \mathbb{R}^{{N_y} \times {N_x}}$ is the output weight matrix.
+
+Writing the equation \ref{eqn:esn_output} in matrix form, the output weights $W^{out}$ are then learned using the following equation:
+ 
+\begin{equation}
+Y=W^{out}X
+\end{equation}
+
+\begin{equation}
+W^{out}=YX^{T}(XX^{T}+{\beta}I)^{-1}
+\end{equation}
+
+where $\beta$ is the regularization coefficient parameter of ridge regression and \textit{I} is the Identity matrix. 
+
+Training procedure of ESN, have only few global parameters which are to be optimized: reservoir size $ N_{x} $, spectral radius of $W^{res}$, input scaling of $W^{in}$, leak rate $\alpha$ and the ridge parameter $\beta$. All these parameters can only be optimized by trial and error method and depends heavily on the task under consideration. Usually a grid search is applied to find the best parameter combination.   
