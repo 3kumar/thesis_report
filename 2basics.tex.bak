@@ -1,11 +1,25 @@
 \chapter{Basics of Word2Vec and Echo State Network}\label{basics}
 
 \section{Word2Vec}
-Word2vec is a neural model proposed by Tomas Miklov that takes in input a large text data to generate the distributed word  embedding of the words present in text and also preserve the linear regularities among words[]. In other words, it maps the words into a continuous vector space where semantically related words are placed closed to each other in the vector space. Earlier the words have been treated as discrete atomic symbols in all traditional NLP system, where each word were represented in a localist fashion. Localist representation of words does not contain any semantic or syntactic information of the word it is encoding and thus depriving the NLP systems to utilize this information while processing. Word2vec neural word embedding overcomes this issue and capture the semantics and syntactic information of the word in a computationally-efficient manner. For learning word embedding two neural architecture were proposed, the Continuous Bag Of Word (CBOW) and Skip-Gram. Both the models are architecturally same i.e. both have three layers, the input layer, hidden layer and an output layer, but have different training objectives. The architecture of both the models is shown in [fig]. In the next sections we give a brief overview of  CBOW model and skip-gram model. However we used skip-gram model in our work because it was proven that it produce better word-embeddings as compared to CBOW[ref main paper].
+Word2vec is a neural model proposed by Tomas Miklov that takes in input a large text data to generate the distributed word  embedding of the words present in text and also preserve the linear regularities among words[]. In other words, it maps the words into a continuous vector space where semantically related words are placed closed to each other in the vector space. Earlier the words have been treated as discrete atomic symbols in all traditional NLP system, where each word were represented in a localist fashion. Localist representation of words does not contain any semantic or syntactic information of the word it is encoding and thus depriving the NLP systems to utilize this information while processing. Word2vec neural word embedding overcomes this issue and capture the semantics and syntactic information of the word in a computationally-efficient manner. For learning word embedding two neural architecture were proposed, the Continuous Bag Of Word (CBOW) and Skip-Gram (SG). Both the models are architecturally same i.e. both have three layers, the input layer, hidden layer and an output layer, but have different training objectives. The architecture of both CBOW and SG models is shown in figure \ref{fig:cbow} and \ref{fig:sg} respecively. In the next sections we give a brief overview of  CBOW model and SG model. However we used skip-gram model in our work because it was proven that it produce better word-embeddings as compared to CBOW[ref main paper].
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\linewidth,height=10cm,keepaspectratio]{cbow}
+\caption[The CBOW model]{\textbf{The CBOW model: } In the CBOW model, the objective is to predict the target word from the words in the context (or neighbouring words). The context words are input to the model (in this case only one) using localist representation where only one vector element corresponding to input word is active ($x_{c}$, shown in red). The model outputs the probability for each word in vocabulary, which is maximized for actual target word during training. Adapted from [ref].}
+\label{fig:cbow}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1.8\linewidth,height=10cm,keepaspectratio]{sg}
+\caption[The Skip-gram model]{\textbf{The skip-gram model: }In the skip model, the objective is reverse of CBOW. It predict the context words from the word. The target word is input to the model using localist representation where only one vector element corresponding to input word is active ($x_{t}$, shown in red). The model then maximizes the probaility of context words during training. Adapted from [ref].}
+\label{fig:sg}
+\end{figure}
 
 \subsection{CBOW Model}
 
-CBOW  model are three layered neural model with the training objective to predict a target word (e.g. Peter) given some context words (John gave ball to …)[ref]. Figure  shows the network architecture with a simplified case of one context word. The model is trained on the dataset having a vocabulary size V in an unsupervised way to achieve the objective. The hidden layer is of size N, the dimensions of desired word embedding, and neurons in both the adjacent layer i.e.  input and output layers,  are fully connected to hidden layer neurons. The input to the network is the context word $w_c {\in} \mathbb{R}^{V}$ represented using localist representation where only one unit $x_c$ at index c will be 1 out of V units $w_c=[{x_1,.....,x_V}]$ and all other units will be 0[ref].The activation of hidden layer is then given by :
+CBOW  model are three layered neural model with the training objective to predict a target word (e.g. Peter) given some context words (John gave ball to …)[ref]. Figure \ref{fig:cbow} shows the network architecture with a simplified case of one context word. The model is trained on the dataset having a vocabulary size $V$ in an unsupervised way to achieve the objective. The hidden layer is of size $N$, the dimensions of desired word embedding, and neurons in both the adjacent layer i.e.  input and output layers,  are fully connected to hidden layer neurons. The input to the network is the context word $w_c {\in} \mathbb{R}^{V}$ represented using localist representation where only one unit $x_c$ at index c will be 1 out of V units $w_c=[{x_1,.....,x_V}]$ and all other units will be 0[ref].The activation of hidden layer is then given by :
 
 \begin{equation}\label{eqn:hidden_act}
 	h = W^T . w_c= W_{(c,:)}=v_{c}
@@ -13,7 +27,7 @@ CBOW  model are three layered neural model with the training objective to predic
 
 where $W {\in} \mathbb{R}^{V{\times}N}$ is the weight matrix from input to hidden layer and $v_{c}$ is the vector  embedding of the context word $w_c$. Eqn. \ref{eqn:hidden_act} basically copies the $c^{th}$ row of weight matrix W on the hidden layer as hidden layer activation function is linear. 
 
-A score $u {\in}R^V$ is then calculated for all the target words in the Vocabulary, which is essentially the compatibility of a word $w_i$ given the context word $w_c$.
+A score $u {\in}\mathbb{R}^V$ is then calculated for all the target words in the vocabulary, which is essentially the compatibility of a word $w_i$ given the context word $w_c$.
 
 \begin{equation}
 \begin{split}
@@ -26,7 +40,7 @@ A score $u {\in}R^V$ is then calculated for all the target words in the Vocabula
 	u_i = {W^{'}_i}^T. v_{c}
 \end{equation}
 
-where $u_i$ gives the score of $i^{th}$ word,$w_{i}$, for i = 1,2...V. $W^{'}{\in} \mathbb{R}^{N{\times}V} $ is the weight matrix between hidden and output layer. ${W^{'}_i}$ is the $i^{th}$ column vector of matrix $W^{'}$.  
+where $u_i$ gives the score of $i^{th}$ word,$w_{i}$, for i = 1, 2...V. $W^{'}{\in} \mathbb{R}^{N{\times}V} $ is the weight matrix between hidden and output layer. ${W^{'}_i}$ is the $i^{th}$ column vector of matrix $W^{'}$.  
 The computed scores are then converted to posterior probabilities by output neurons with softmax activation function. Thus aliasing ${W^{'}_i}$ as $v^{'}_{i}$ we get output probabilities as: 
 
 \begin{equation}
@@ -35,9 +49,9 @@ y_i &= P(w_i | w_c) = \frac {\exp(u_i)} {\sum_{i' {\in} V} \exp (u_{i^{'}})}\\
 	&= \frac {\exp({v^{'}_{i}}^T.v_{c})}{\sum_{i' {\in} V}\exp({v^{'}_{i^{'}}}^T.v_{c})}
 \end{split}
 \end{equation}
-where $y_i$ is the probability of a word given the context word.
+where $y_i$ is the probability of $i^{th}$ word given the context word.
 
-The training objective is then achieved by maximizing the log likelihood of actual target word $(w_{t})$ given the context words. So the cost functions then can be written as:
+The training objective is then achieved by maximizing the log likelihood of actual target word $(w_{t})$ given the context word ($w_{c}$). So the cost functions then can be written as:
 
 \begin{equation}
   \begin{split}
@@ -46,57 +60,55 @@ The training objective is then achieved by maximizing the log likelihood of actu
   \end{split}
 \end{equation} 
 
-In case of multiple context words is input to the network, the equation 1 only change to:
+In case of multiple context words is input to the network, the equation \ref{eqn:hidden_act} only change to:
 
 \begin{equation}
 h= \frac {1}{K} .(v_{c_1}+v_{c_2}+.......+v_{c_K}) 
 \end{equation}	
-where k is the size of context window. This equation averages vector embeddings of all context words.
+where $k$ is the size of context window. This equation averages vector embeddings of all context words.
 
 \subsection{Skip-gram Model}
 
-In the Skip-Gram model training objective is reversed from that of CBOW model. In other words, the objective is to learn the vector representation of the word that is good in predicting the context words. More specifically given a target word sequence ${w_1,.....w_V}$, the objective is to maximize the average log probability 
+In the Skip-Gram model training objective is reversed from that of CBOW model. In other words, the objective is to learn the vector representation of the word that is good in predicting the context words. Thus for a given sequence of words $\{w_1,.....w_V\}$, the objective is to maximize the average log probability 
 
 \begin{equation}
 \frac {1}{V}\sum_{t=1}^{V} \sum_{{-c \leq j \leq c},{j \neq 0}} {log\ P(w_{t+j}|w_t)}
 \end{equation}
-where c is the size of context window, $P(w_{t+c}|w_t)$ is the probability of context word $w_{t+c}$ given the target word $w_t$. This is measured using softmax function as:
+where c is the size of context window, $P(w_{t+c}|w_t)$ is the probability of context word $w_{t+j}$ for $-c \leq j \leq c$, given the target word $w_t$. This is measured using softmax function as:
 
-\begin{equation}
+\begin{equation} \label{eqn:sg_prob}
 p(w_{t+j}|w_t)=\frac {\exp({{v^{'}_{t+j}}^{T}}.{v_t})}{\sum_{w {\in}V} \exp({{v^{'}_{w}}^{T}}.{v_t})}
 \end{equation}
 
-where ${v^{'}_{t+j}}$ and ${v_t}$ are the vector representation of word $w_{t+j}$ and $w_{t}$ respectively.
+\noindent where ${v^{'}_{t+j}}$ and ${v_t}$ are the vector representation of word $w_{t+j}$ and $w_{t}$ respectively.
 
-Calculating the full softmax is computationally expensive as it need to compute and normalize probability for every other word $w$ in the vocabulary V for a given input word $(w_{c} for CBOW or w_{t} for skip-gram)$ at every training step. Thus negative sampling was proposed for learning the word embeddings[ref].
+The objective function is thus optimized using stochastic gradient descent to learn the good word vectors. Calculating the full softmax is computationally expensive as it need to compute and normalize probability for every other word $w$ in the vocabulary V for a given input word ($w_{c}$ for CBOW or $w_{t}$ for skip-gram) at every training step. Thus negative sampling was proposed for learning the word embeddings[ref].
 
 \subsubsection{Skip-gram with negative sampling}
 
-For learning word features full probabilistic models was not required. So in skip-gram negative sampling is used for approximation of word features. This technique treats feature learning as a binary classification(logistics regression) problems. The model is thus trained to distinguish the target word from k imaginary noise words $w_{noise}$, in the same context. Thus log probability $p(w_{t+j}|w_t)$ is approximated by:
+For learning word features full probabilistic models was not required. So in skip-gram negative sampling is used for approximation of word features. This technique treats feature learning as a binary classification (logistics regression) problems[ref?]. The model is thus trained to distinguish the target word from $k$ imaginary noise words $w_{noise}$, in the same context. Thus the log probability $p(w_{t+j}|w_t)$ in equation \ref{eqn:sg_prob} is now approximated by:
 
 \begin{equation}
 p(w_{t+j}|w_t)=log\ \sigma({{v^{'}_{t+j}}^{T}}.{v_t})\ +\  \sum_{w_{noise}{\in}N_{k}} \log\ \sigma({{v^{'}_{noise}}^T}.v_{t})
 \end{equation}
 
-where $\sigma(x)=1/(1+\exp(-x))$, and $N_k$ is the set of k noise word compared to corresponding context word $w_{t+j}$.
-
-The objective function is thus optimized using stochastic gradient descent to learn the good word features.
+\noindent where $\sigma(x)=1/(1+\exp(-x))$, and $N_k$ is the set of $k$ noise word compared to corresponding context word $w_{t+j}$ for $-c \leq j \leq c$. 
 
 \subsection{Properties of Word2Vec embeddings}
 
-Although the word2vec model is simple in the architecture and learning, it produces word vector embedding which surprisingly encodes several linguistic regularities and patterns [ref -main paper]. More importantly it is astonishing because the network was not explicitly trained for these linguistic properties (see fig \ref{fig:sem_rel} \ref{fig:w2v_translation}). The distributed word embeddings encodes semantic and syntactic properties of the words[ref word2vec 2013] as a constant vector offset between a pair of words sharing a specific relationship. For example the word embeddings $"King - Queen \approx Man - Woman"$, $"Apples - Apple \approx Cars - Car"$.
+Although the word2vec model is simple in the architecture and learning, it produces word vector embedding which surprisingly encodes several linguistic regularities and patterns [ref -main paper]. More importantly it is astonishing because the network was not explicitly trained for these linguistic properties (see fig. \ref{fig:sem_rel} and \ref{fig:w2v_translation}). The distributed word embeddings encodes semantic and syntactic properties of the words[ref word2vec 2013] as a constant vector offset between a pair of words sharing a specific relationship. For example the word embeddings $"King - Queen \approx Man - Woman"$, $"Apples - Apple \approx Cars - Car"$.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=0.8\linewidth]{linear-relationships}
-\caption{\textbf{Word2vec Semantic regularities:} Description goes here.}[ESN9]
+\caption[Word2vec semantic regularities]{\textbf{Word2vec semantic regularities.}} 
 \label{fig:sem_rel}
 \end{figure}
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=0.8\linewidth]{word2vec_translation}
-\caption{\textbf{Word2Vec Translation Property:} Description goes here [ESN9]}
+\caption[Word2Vec language translation property]{\textbf{Word2Vec language translation property.}}
 \label{fig:w2v_translation}
 \end{figure}
 
@@ -116,7 +128,7 @@ $W^{res}$), are sparsely and randomly initialized and more crucially remains unt
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=0.8\linewidth]{esn_architecture}
-\caption{\textbf{Architecture of classical ESN:} The reservoir is the recurrent neural network with N units and initialized with random connection. The reservoir is provided input from the input u(n) and y(n) from the input and output neurons  respectively. The input weights Win from input and Wback from output neurons are also randomly initialized and stays static during learning. The output  weight from reservoir to output unit is learned by the network.[ESN9]}
+\caption{\textbf{Architecture of classical ESN:} The reservoir is the recurrent neural network with N units and initialized with random connection. The reservoir is provided input $u(n)$ to the input layer and teacher layer $y(n)$ are pushed output neurons  respectively during training. The input to reservoir weights ($W^{in}$), output neurons to reservoir ($W^{back}$, optional and depends on task) and reservoir to reservoir weight ($W^{res}$) from are also randomly initialized and stays static during learning. The output weight from reservoir to output unit are the only weights learned by the network during trainging.[ESN9]}
 \label{fig:esn_arch}
 \end{figure}
 

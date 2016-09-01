@@ -1,6 +1,6 @@
 \chapter{Experiments and Results}\label{results}
 
-We performed experiments, with the previously described two variants of the proposed model. Each experiment was done with corpus 45, 462 and 90582.
+In chapter we describe the experiments performed with the two model variants proposed in the previous chapter. 
 
 \section{Input and Ouput Coding}
 
@@ -20,44 +20,69 @@ In order to determine the model capability for predicting thematic roles of the 
 
 \subsection{Experiment-2: Generalization Capabilities} \label{exp-2}
 
-In the previous experiment we demonstrated the performance of the model with the limited set of sentences where the results suggested that the model is probably overfitting and not generalizing on unseen data. So in order to test the generalization capability of the model, we examine the model behavious with an extended corpus with 462 sentences(see section corpus-462) using 10-fold cross validation. Corpus-462 with 462 sentences was randomly split into 10 equally sized subsets(i.e. each subset with ~46 sentences). The model was trained on sentences from 9 subsets and then tested on remaining one subset. This process was repeated 10 times such that the model is trained and tested on all the subsets atleast once. 
+In the previous experiment we demonstrated the performance of the model with the limited set of sentences where the results suggested that the model is probably overfitting and not generalizing on unseen data. So in order to test the generalization capability of the model, we examined the model behaviour with an extended corpus of 462 sentences(see section corpus-462) using 10-fold cross validation. Corpus-462 with 462 sentences was randomly split into 10 equally sized subsets(i.e. each subset with $\approx$ 46 sentences). The model was trained on sentences from 9 subsets and then tested on remaining one subset. This process was repeated 10 times such that the model is trained and tested on all the subsets atleast once. 
 
-\paragraph{Model Variant-1:} We initially trained and tested the model on all the 462 sentences. The model learned the full corpus-462 with $0.54\%$ meaning error and $1.51\%$ sentence error in continous learning mode and $0.07\%$ meaning error and $0.21\%$ sentence error in final learning mode. Using the 10-fold cross validation the model generalized to $7.66\% (\pm 1.62\%) $ meaning error and $20.26\% (\pm 2.76\%)$ sentence error in continous learning mode with sepctral radius(SR), input scaling(IS) and leak rate(LR) of $2.4$, $2.5$ and $0.07$ respectively. Whereas in the sentence final learning mode with $SR=2.2$, $IS=2.3$ and $LR=0.13$, the optimal meaning and sentence error were observed as $8.79\% (\pm 1.24\%)$ and $23.69\% (\pm 1.52\%)$ respectively. The optimal parameters were identified using grid search over the parameter space. 
+\paragraph{Model Variant-1:} We initially trained and tested the model with reservoir of 1000 neurons on all the 462 sentences. The model learned the full corpus-462 with $0.54\%$ meaning error and $1.51\%$ sentence error in continous learning mode and $0.07\%$ meaning error and $0.21\%$ sentence error in final learning mode. Using 10-fold cross validation, the model generalized to $7.66\% (\pm 1.62\%) $ meaning error and $20.26\% (\pm 2.76\%)$ sentence error in continous learning mode with sepctral radius(SR), input scaling(IS) and leak rate(LR) of $2.4$, $2.5$ and $0.07$ respectively. Whereas in the sentence final learning mode with $SR = 2.2$, $IS = 2.3$ and $LR = 0.13$, the optimal meaning and sentence error were observed as $8.79\% (\pm 1.24\%)$ and $23.69\% (\pm 1.52\%)$ respectively. The optimal parameters were identified using grid search over the parameter space.
 
-	Using word2vec vector embeddings of words as compared to localist representation we clearly see an improvement in meaning error from $... \%$ to $... \%$ and sentence error from $... \%$ to $... \%$ in SCL mode. In SFL model the meaning error reduced from  $...\%$ to $...\%$ and sentence error from $...\%$ to $...\%$.
+We compared the model's performance when using word2vec vector embeddings of words in a sentence with the perfomance while using sentence in grammatical construction form and using localist representation of words. As illustrated in table \ref{tab:corpus-structure}, we clearly see an improvement of $1.16 \%$ in meaning error and $18.37 \%$ in sentence error in sentence continuous learning mode (see table \ref{}) where the meaning error reduced from $8.82 \%$ to $7.66 \%$ and sentence error from $38.63 \%$ to $20.26 \%$. In sentence final learning mode the meaning error reduced from  $9.17 \%$ to $ 8.79 \%$ and sentence error from $24.37 \%$ to $23.66 \%$. One can notice that the performace gain in meaning and sentence error in SCL mode is much more as compared to that of in SFL. The reason is that the word-embeddings are learned from the context words and thus vector of a word encapsulates the information about neighbouring words. 
 	
-As illustrated in Table \ref{tab:corpus-structure}, we observed that there is an %explaination goes here%
-
-\paragraph{Model Variant-2:} The model variant-2 with a reservoir of size 1000 neurons when trained and tested on all 462 sentences of corpus-462, learned to label the roles of words in the sentences with an accuracy(A),precision(P), recall(R) and F1-Score(F1) of $96.91\%$, $96.98\%$, $96.91\%$, $96.74\%$ respectively. When the model varaint tested using 10-fold cross validation we got A=$97.18\% (\pm 0.11\%)$, P= $96.86\%(\pm 0.49\%)$, R=$91.93\%(\pm 0.23\%)$ and F1=$94.16\%(\pm 0.26\%)$ with $IS=1.15, SR=0.7, LR=0.1$. The marginal difference between the training and cross validation scores indicates that the model variant is generalizing well even on untrained data and is not overfitting. The precision, recall and f1-score for individual role is listed in table \ref{tab:classsification-scores}.
-
-% modify evaluation metrics section and change to macro from weighted average
-%analyse table and confusion matrix
+\paragraph{Model Variant-2:} The model variant-2 with a reservoir of size 1000 neurons when trained and tested on all 462 sentences of corpus-462, learned to thematic roles of the words in the sentences with an Accuracy(A), Precision(P), Recall(R) and F1-Score(F1) of $97.38\%$,  $97.48\%$, $92.28\%$, $94.64\%$ respectively. When the model variant tested using 10-fold cross validation we got A=$97.18\% (\pm 0.11\%)$, P= $96.86\%(\pm 0.49\%)$, R=$91.93\%(\pm 0.23\%)$ and F1=$94.16\%(\pm 0.26\%)$ with $IS=1.15, SR=0.7, LR=0.1$. The marginal difference between the training and cross validation scores indicates that the model variant is generalizing well even on untrained data and is not overfitting. The precision, recall and f1-score for individual role is listed in table \ref{tab:classsification-scores-21}. 
 
 \begin{table}
 \centering
 \begin{threeparttable}
-\caption{Training and testing classification scores for individual roles}
-\label{tab:classsification-scores}
+\caption{Training and testing classification scores for individual roles when using model variant-2 with word2vec vector embeddings of words for input sentences.}
+\label{tab:classsification-scores-21}
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{llcccc}
 \toprule
 Role & & \( Precision \) & \( Recall \) & \( F1 \ Score \) & \( Support \) \\
 \midrule                 
-\textbf{Agent}&test & 0.92 & 0.79 & 0.85 & 888 \\
-			& train & 0.94 & 0.80 & 0.88 & 892 \\
-\textbf{Object}&test & 0.95 & 0.81 & 0.88 & 791 \\
-			& train & 0.96 & 0.81 & 0.88 & 794 \\
-\textbf{Recipient}&test & 1.00 & 1.00 & 1.00 & 383 \\
-			& train & 1.00 & 1.00 & 1.00 & 384 \\
-\textbf{Verb}&test & 1.00 & 1.00 & 1.00 & 888 \\
-			& train & 1.00 & 1.00 & 1.00 & 892 \\
-\textbf{No Role}& test & 0.97 & 1.00 & 0.99 & 9785 \\
-			& train & 0.97 & 1.00 & 0.99 & 9823 \\
+\textbf{Agent}		&test 	& 0.92 & 0.79 & 0.85 & 888 \\
+					& train & 0.94 & 0.80 & 0.86 & 892 \\
+\textbf{Object}		&test 	& 0.95 & 0.81 & 0.88 & 791 \\
+					& train & 0.96 & 0.81 & 0.88 & 794 \\
+\textbf{Recipient}	&test 	& 1.00 & 1.00 & 1.00 & 383 \\
+					& train & 1.00 & 1.00 & 1.00 & 384 \\
+\textbf{Verb}		&test	& 1.00 & 1.00 & 1.00 & 888 \\
+					& train & 1.00 & 1.00 & 1.00 & 892 \\
+\textbf{No Role}	& test 	& 0.97 & 1.00 & 0.99 & 9785 \\
+					& train & 0.97 & 1.00 & 0.99 & 9823 \\
 \bottomrule
 \end{tabular}
 \begin{tablenotes}
 \small
-\item Comparision of training and cross validation scores for each output roles predicted by the model. Support for each role: actual number of instance, is also shown in last column. Simulation were done using 1000 reservoir neurons with SR=0.7, ISS=1.15, LR=0.1.
+\item Comparision of training and cross validation scores for each output roles predicted by the model. Support for each role: actual number of instance, is also shown in last column. Simulation were done using 1000 reservoir neurons and parameters: SR = 0.7, IS = 1.15, LR = 0.1.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+\begin{table}
+\centering
+\begin{threeparttable}
+\caption{Training and testing classification scores for individual roles when using input sentences in GC form with localist word vector.}
+\label{tab:classsification-scores-22}
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{llcccc}
+\toprule
+Role & & \( Precision \) & \( Recall \) & \( F1 \ Score \) & \( Support \) \\
+\midrule                 
+\textbf{Agent}		&test 	& 0.66 & 0.62 & 0.64 & 888 \\
+					&train 	& 0.71 & 0.68 & 0.69 & 892 \\
+\textbf{Object}		&test 	& 0.61 & 0.65 & 0.63 & 791 \\
+					&train 	& 0.67 & 0.69 & 0.68 & 794 \\
+\textbf{Recipient}	&test 	& 0.69 & 0.96 & 0.80 & 383 \\
+					&train 	& 0.70 & 0.97 & 0.81 & 384 \\
+\textbf{Verb}		&test 	& 0.96 & 0.92 & 0.94 & 888 \\
+					&train 	& 0.98 & 0.94 & 0.96 & 892 \\
+\textbf{No Role}	&test 	& 0.97 & 0.96 & 0.97 & 9785 \\
+					&train 	& 0.98 & 0.97 & 0.97 & 9823 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Comparision of training and cross validation scores for each output roles predicted by the model. Support for each role: actual number of instance for a role, is also shown in last column. Simulation were done using 1000 reservoir neurons and parameters: SR = 1.2, IS = 0.7, LR = 0.3.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
@@ -65,19 +90,24 @@ Role & & \( Precision \) & \( Recall \) & \( F1 \ Score \) & \( Support \) \\
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1.0\linewidth]{confusion_matrix}
-\caption{\textbf{Normalized Confusion matrix:} Description goes here.}
+\caption{\textbf{Normalized Confusion matrix when using word2vec word embeddings:} The confusion matrix with true roles (in rows) and predicted roles (in columns). The top-left to bottom-right diagonal shows the percentage of values predicted correctly.Everything other than this diagonal represents the incorrect prediction of roles. Model identified almost all words labelled as Recipient , Verb and No Role and made some error in predicting Agent and Object. The results were obtained with reservoir of 1000 neurons and 10 fold-cross validation.}
 \label{fig:confusion_matrix}
 \end{figure}
 
-In order to compare the performance of model variant-2 while using word2vec embeddings for words over localist vector representation, we also performed a 10-fold cross validation using localist vector representation of the words for the input sentences. The observed results indicates that the model variant-2 performs better with word2vec vectors of words than localist vector representation. 
+We also performed the simulations using model variant-2 with grammatical constructions and localist representation of words for a sentences. The model produced P = $80.60 \%$, R = $84.90 \%$, F1 = $82.31 \%$ during training and P = $78.04 \%$, R = $82.23 \%$, F1 = $79.68 \%$ during cross-validation. 
+
+% analyse table and confusion matrix
+
+
 
 \subsection{Experiment-3: Effect of Corpus structure} 
 
-Recall that the corpus-462 was created based on context free grammer. Thus the sentences in the corpus contains inherent grammatical structure. The model is thus possibly utilizing the underlying grammatical structure to some extend for learning and generalizes well. To test this hypothesis and to demonstrate that the model is not generalizing on any inconsitent regularity in the corpus, we removed the inherent grammatical structure from the sentence in the corpus by randomizing the word orders within the sentences. Such a test will also help us to have insight on what the model is actually learning and whether the model is overfitting or not. The situation of overfitting typically occurs when the corpus size is significantally less than the number of trainable parameters[ref?]. In the model variant-1, having reservoir of size 1000 neurons and 42 readout neurons the number of trainable parameters are 42000 $(42\times 1000)$  whereas the model variant-2 with reservoir size $600$ and $5$ readout neuron the trainable parameters are 3000 $(5 \times 600)$. In both the case the number of trainable parameters are significantally greater than our corpus size (462 sentence). This is thus a possible situation of overfitting.
+Recall that the corpus-462 was created based on context free grammer. Thus the sentences in the corpus contains inherent grammatical structure. The model is thus possibly utilizing the underlying grammatical structure to some extend for learning and generalizing. To test this hypothesis and to demonstrate that the model is not generalizing on any inconsitent regularity in the corpus, we removed the inherent grammatical structure from the sentence in the corpus by randomizing the word orders within the sentences. Such a test will also help us to have insight on what the model is actually learning and whether the model is overfitting or not. The situation of overfitting typically occurs when the corpus size is significantally less than the number of trainable parameters[ref?]. In the model variant-1, having reservoir of size 1000 neurons and 42 readout neurons the number of trainable parameters are 42000 $(42\times 1000)$  whereas the model variant-2 with reservoir size $600$ and $5$ readout neuron the trainable parameters are 3000 $(5 \times 600)$. In both the case the number of trainable parameters are significantally greater than our corpus size (462 sentence). This is thus a possible situation of overfitting.
 
-We presented the corpus with scrambled sentences(i.e. in absence of any grammatical structure) to both the model variants and performed a 10 fold cross-validation. The cross validation errors obtained in the previous experiment on the corpus with grammatical structure can then be compared with the cross validation error obtained while using scrambled corpus. If the model is not overfitting and learning from the grammatical structure then the model should generalize better for the corpus with unscrambled(i.e. in presence of grammatical structure) sentences. However in case of overfitting the generalization effect should not vary much both in presence and absence of grammatical structure in the corpus.
+We presented the corpus with scrambled sentences(i.e. in absence of any grammatical structure) to both the model variants and performed a 10 fold cross-validation. The cross validation errors obtained in the previous experiment on the corpus with grammatical structure can then be compared with the cross validation error obtained while using scrambled corpus. If the model is not overfitting and learning from the grammatical structure then the model should generalize better for the corpus with unscrambled sentences (i.e. in presence of grammatical structure). However in case of overfitting the generalization effect should not vary much both in presence and absence of grammatical structure in the corpus.
 
-As illustrated in Table.[no], we observed that ....
+As illustrated in Table.[no], we observed that [analysis to follow....]
+
 \begin{table}
 \centering
 \begin{threeparttable}
@@ -92,60 +122,125 @@ As illustrated in Table.[no], we observed that ....
   \multirow{3}{*}{\raisebox{-\heavyrulewidth}{}} & \multirow{3}{*}{\raisebox{-\heavyrulewidth}{}} & \multicolumn{2}{l}{Corpus-462} & \multicolumn{2}{l}{462 Scrambled} & \multicolumn{2}{l}{Corpus-462} & \multicolumn{2}{l}{462 Scrambled} \\
   \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8} \cmidrule(lr){9-10}
   
-  						& 		& me & se & me & se	& me & se & me & se \\
+  						& 		& me 	& se 		& me & se			& me 	& se 		& me 		& se \\
   \midrule
-  \textbf{SCL\ train} 	& mean 	& 0.541 & 1.515 & 1 & 2 	& 0.123 & 1.207 & 4.813 & 20.433  \\
-   			    		& std 	& 0.000 & 0.000 & 1 & 2 	& 0.029 & 0.297 & 0.299 & 1.251  \\
-  \textbf{SCL\ test} 	& mean  & 7.663 & 20.260 & 69.761 & 99.130 	& 7.433 & 32.130 & 74.154 & 99.891 \\
-  			   			& std  	& 1.629 & 2.761 & 1.462 & 1.064  	& 0.524 & 1.353 & 0.802 & 0.146\\
-  \textbf{SFL\ train} 	& mean 	& 0.072 & 0.216 & 8.531 & 25.757 	& 0.000 & 0.000 & 0.000 & 0.000  \\
-  				 		& std 	& 0.000 & 0.000 & 0.000 & 0.000 	& 0.000 & 0.000 & 0.000 & 0.000  \\
-  \textbf{SFL\ test}	& mean  & 8.780 & 23.695 & 69.275 & 99.347 	& 9.178 & 24.370 & 73.391 & 99.913 \\
-  			  			& std 	& 1.245 & 1.486 & 2.143 & 0.996  	& 0.574 & 1.192 & 0.962 & 0.106  \\
+  \textbf{SCL\ train} 	& mean 	& 0.541 & 1.515 	& 7.312 & 30.303 	& 0.123 & 1.207 	& 4.813 & 20.433  \\
+   			    		& std 	& 0.000 & 0.000 	& 0.000 & 0.000 	& 0.029 & 0.297 	& 0.299  & 1.251  \\
+   			    		
+  \textbf{SCL\ test} 	& mean  & 7.442 & 20.260 	& 69.761 & 99.130 	& 7.433 & 32.130 	& 74.154 & 99.891 \\
+  			   			& std  	& 1.629 & 2.761 	& 1.462  & 1.064  	& 0.534 & 1.353 	& 0.802  & 0.146\\
+  			   			
+  \textbf{SFL\ train} 	& mean 	& 0.072 & 0.216 	& 9.148  & 31.168 	& 0.000 & 0.000 	& 0.000  & 0.000  \\
+  				 		& std 	& 0.000 & 0.000 	& 0.000  & 0.000 	& 0.000 & 0.000 	& 0.000  & 0.000  \\
+  				 		
+  \textbf{SFL\ test}	& mean  & 8.780 & 23.695 	& 67.548 & 99.347 	& 9.178 & 24.370 	& 73.391 & 99.913 \\
+  			  			& std 	& 1.245 & 1.486		& 1.971  & 0.996  	& 0.574 & 1.192 	& 0.962  & 0.106  \\
   \bottomrule
 \end{tabular}
 \begin{tablenotes}
 \small
 \item 
-Meaning (me) and Sentence error (se) in different learning modes with our approach of using word2vec embeddings and Xavier's \cite{xavier:2013:RT} approach of using grammatical construction and localist representation of words. The errors are given in percentage. For Sentence Final Learning mode (SFL): our approach (ISS=, SR= ,LR= ) and Xavier's approach(ISS=,SR=,LR=). For Sentence Continuous Learning mode (SCL): our approach (IS=2.5, SR=2.4, LR=0.07) and Xavier's approach(ISS=,SR=,LR=). Simulation were done with 10 reservoir instance of 1000 neurons.
+Meaning (me) and Sentence error (se) in different learning modes with our approach of using word2vec embeddings and Xavier's \cite{xavier:2013:RT} approach of using grammatical construction and localist representation of words. The errors are given in percentage. For Sentence Final Learning mode (SFL): our approach (IS = 2.3, SR = 2.3, LR = 0.13 ) and Xavier's approach(IS = 1, SR =, LR =). For Sentence Continuous Learning mode (SCL): our approach (IS=2.5, SR=2.4, LR=0.07) and Xavier's approach(SR = 1,LR = ). Simulation were done with 10 reservoir instance of 1000 neurons.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}
 
 \subsection{Experiment-4: Effect of Reservoir size}
 
-One of the important hyperparmeter which effects the performance of the model is the size of reservoir (i.e. number of neurons in the reservoir). Also the addition of neurons in the reserovir is computationally inexpensive, because the read-out weights ($W^{out}$) scales linearly with the number of neurons in the reservoir[ref?]. So, in order to determine the impact of reservoir size on the peformance of the model variant-1, we plotted the cross validation errors against number of neurons in the reservoir.
+One of the important hyperparmeter which effects the performance of the model is the size of reservoir (i.e. number of neurons in the reservoir). Also the addition of neurons in the reserovir is computationally inexpensive, because the read-out weights ($W^{out}$) scales linearly with the number of neurons in the reservoir[ref?]. So, in order to determine the effect of reservoir size on the peformance of the model variant-1, we plotted the cross validation errors (see fig. \ref{fig:reservoir_size_1}) against the number of neurons in the reservoir. 
+
+It was observed that both meaning and sentence cross validatoin error reduces with increase in reservoir size but asymptotes when the reservoir size is above 1000 neurons for this corpus (i.e. corpus-462). This indicates that the model can not generalize further for this corpus with further increase in reservoir size. However the lowest errors were observed in reservoir with 2882 neurons with meaning and sentence error of $6.74 \% (\pm 1.5\%)$ and $17.39\% (\pm 4.23 \%)$ in SCL mode. In SFL model meaning error and sentence errors were observed as $8.70 \% (\pm 1.62\%)$ and $22.60\% (\pm 5.25 \%)$ respectively. It can be noticed that these lowest errors does not vary significantally when compared to errors obtained with reservoir of size 1000 neurons (see table \ref{tab:corpus-structure}).
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1.0\linewidth]{reservoir_size_1}
-\caption{\textbf{Effect of reservoir size on cross validation errors on Model Varinat-1:} Description goes here.}
-\label{fig:sem_rel}
+\caption{\textbf{Effect of reservoir size on cross validation errors on Model Variant-1:} Description goes here.}
+\label{fig:reservoir_size_1}
 \end{figure}
+
+We also studied the effect of reservoir size on the performance of model variant-2 when using word2vec word embeddings and also when using grammatical construction of sentence along with localist word representation. In figure \ref{fig:reservoir_size_2}, it can be clearly observed that the model variant-2 performs much better with word2vec word embeddings with all reservoir size when compared to use grammatical construction of sentence with localist word vector. Even the highest F1-Score ($F1 = 80.06 \%$) obtained using localist representation with reservoir size 2250 is much less than that of obtained using word2vec word embeddings with reservoir of size 200 (F1 = $ 93.56\%$). Overall with increase in reservoir size the classification score also increases irrespective of the word vectors used as an input to the model. The model also asymptotes when reservoir size is 200 and 600 with word2vec and localist vectors respectively, indicating that model can not be genralized further on this corpus (i.e. corpus-462). 
 
 \begin{figure}[hbtp]
 \centering
-\includegraphics[width=1.0\linewidth]{reservoir_size_1}
-\caption{\textbf{Effect of reservoir size on cross validation errors on Model Variant-2:} Description goes here.}
-\label{fig:sem_rel}
+\includegraphics[width=1.0\linewidth]{reservoir_size_2}
+\caption{\textbf{Effect of reservoir size on classification scores of Model Varinat-2:} Description goes here.}
+\label{fig:reservoir_size_2}
 \end{figure}
+
+
 
 %TODO: Write the effect of reservoir size on the model variant-2
 
 \subsection{Experiment-5: Effect of Corpus size}
 
-In the previous experiments we noticed that the errors rates for model variant-1 and classification scores for model variant [] improved as we extended the corpus size from 45 to 462 sentences. To investigate the effect of corpus size and scaling capability of the model, we used extended corpus-90582(see section) for this experiment. As the corpus also contains $12\%$ of ambiguous sentences which impede the learning and generalization if the model, this experimtent will also validate the model ability to process the abmbiguous sentences.
+In the previous experiments we noticed that the errors rates for model variant-1 and classification scores for model variant-2 [] improved as we extended the corpus size from 45 to 462 sentences. To investigate the effect of corpus size and scaling capability of the model, we used extended corpus-90582(see section) for this experiment. As the corpus also contains $12\%$ of ambiguous sentences which impede the learning and generalization of the model, this experiment will also validate the model's ability to process the abmbiguous sentences.
 
-In order to study the generalization capabilty of the model with different corpus size, we created 6 sub-corpora each containing $6\%$, $12\%$, $25\%$, $50\%$, $75\%$, $100\%$ of sentences by randomly sampling from the orginal corpora with 90582 sentences[ref?]. Each of the sub-corpora is exposed to the model and 2-fold cross validation is performed to evaluate the model performance. In 2-fold cross validation the model is trained on half the subcorpora size and tested on remaining half. The second half used for testing is then used to train the model and then tested on the first half used for training previously. Figure [ref] and Figure [ref] shows the cross validation errors rates with respect to corpus size for model variant-1 and variant-2 respectively.
+In order to study the generalization capabilty of the model with different corpus size,  6 sub-corpora were created by randomly sampling $6\%$, $12\%$, $25\%$, $50\%$, $75\%$, $100\%$ of sentences from the orginal corpora of 90582 sentences\cite{end-to-end}. Each of the sub-corpora was exposed to the model and 2-fold cross validation is performed where the model was trained on half the sub-corpora size and tested on remaining half. The second half used for testing was then used to train the model and then tested on the first half used for training previously.
+
+Figure \ref{fig:corpus_size_1} shows the cross validation errors rates with respect to corpus size while using model variant-1. It can be observed that with increase in corpus size from $6 \%$  to $25 \%$, the meaning error sharply drops from some $12.23 \%$ to $3.92 \%$ in SCL mode and from $12.10\%$ to $4.88 \%$ in SFL mode. Similarly, the sentence error also decreases from $54.43 \%$ to $21.89 \%$ in SCL and from $55.22 \%$ to $26.17 \%$ in SFL mode. When the sub-corpora size is $50\%$, where the model was trained only on $25\%$ of corpora size, the model already generalized with $17.11 \%$ sentence error and $2.98 \%$ meaning error in SCL mode and  $22.32 \%$ sentence error and $4.13 \%$ meaning error in SFL mode. The more gradual slope from $50 \%$ to $100 \%$ sub-corpora size in both the learning modes for meaning and sentence error indicates the model has already generalized and further increase in corpus size won’t have much effect on cross validation error.
+ 
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=1.0\linewidth]{corpus_size_1}
-\caption{\textbf{Effect of corpus size on cross validation errors:} Description goes here.}[ESN9]
-\label{fig:sem_rel}
+\caption{\textbf{Effect of corpus size on cross validation errors:} Description goes here.}
+\label{fig:corpus_size_1}
 \end{figure}
 
-\subsection{Experiment-6: Online reanalysis of sentences}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1.0\linewidth]{corpus_size_xavier}
+\caption{\textbf{Effect of corpus size on cross validation errors using localist word vector as reported in [ref?]:} Description goes here.}
+\label{fig:corpus_size_xavier}
+\end{figure}
+
+
+\newpage
+
+\subsection{Experiment-6: Online re-analysis of sentences}
+
+In the previous experiments we observed that both the model variants generalized well and cross validation error rates dropped with increase in reservoir size. As we saw that model variants performs better when we increased corpus size from 45 sentences to 462 sentences. As corpus-45 contains sentence with uniques grammatical structure (i.e. active, passive, subject and object relative etc.) we added these 45 sentences to corpus-462 so the resultant corpus have 507 sentence (462+45) and analysed the activation produced by model variant-1 for the input sentences. We observed that while learning the model is re-analyzing the thematic roles across the time. The same behaviour was observed by xavier et. al [ref?] with sentences in grammatical constructions form and localist representation of words. However we observed that the model is making earlier predictions with word2vec embeddings. The reason for such a behavior is because the word2vec word embeddings were learned from the context words and each word vector encodes the information about neighbouring words. 
+
+We examined and plotted the four sentences with active and passive constructions studied in Hinaur et al. [ref].
+
+\begin{enumerate}[noitemsep]
+\item the man gave the book to the boy. \label{eg-1:or-sent-17}
+\item the man took the ball that hit the glass. \label{eg-1:or-sent-23}
+\item the boy caught the ball that was thrown by the man.  \label{eg-1:or-sent-27} 
+\item the ball was pushed by the man.  \label{eg-1:or-sent-16}
+\end{enumerate}
+
+Figure \ref{fig:act_analysis_1} shows the activations for these four different sentences across time. As all the four sentences start with "the", activation at this word is same for all the sentences. In sentences \ref{eg-1:or-sent-17} and \ref{eg-1:or-sent-23} with the arrival of first noun (i.e. man) the activation of noun-2 (i.e. book and ball) being an object of verb-1 is increased and confirmed with arrival of verb 'gave' and 'took' respectively.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1.0\linewidth]{act_analysis_1}
+\caption{\textbf{Effect of corpus size on cross validation errors using localist word vector as reported in [ref?]:} Description goes here.}
+\label{fig:act_analysis_1}
+\end{figure}
+
+Consider another two sentences 
+\begin{enumerate}[noitemsep]
+\item the dog that chased the cat ate the rat \label{eg-1:or-sent-17}
+\item the cat that the dog chased bit the man. \label{eg-1:or-sent-23}
+\end{enumerate}
+
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1.0\linewidth]{act_analysis_2}
+\caption{\textbf{Effect of corpus size on cross validation errors using localist word vector as reported in [ref?]:} Description goes here.}
+\label{fig:act_analysis_2}
+\end{figure}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=1.0\linewidth]{act_analysis_3}
+\caption{\textbf{Effect of corpus size on cross validation errors using localist word vector as reported in [ref?]:} Description goes here.}
+\label{fig:act_analysis_3}
+\end{figure}
+
 
  
  

@@ -70,6 +70,8 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{booktabs,caption,fixltx2e}
 \usepackage[flushleft]{threeparttable}
+\usepackage{color, colortbl}
+\usepackage{hhline}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PDF Information und Definitions:
 \author{\trauthor}
@@ -266,6 +268,7 @@ Hier die deutsche Zusammenfassung einf\"ugen (notwendig).
 \tableofcontents
 \cleardoublepage
 % List of Figures and List of tables are optional. -> Not needed in most theses.
+
 \fancyhead[LE,RO]{\it List of Figures}
 \listoffigures
 \cleardoublepage
@@ -327,7 +330,7 @@ Hier die deutsche Zusammenfassung einf\"ugen (notwendig).
 \fancyhead[LE,RO]{\it Bibliography}       % A bibliography never have a letter or numbering!
     \bibliographystyle{plain}             % Style for presenting the literature
     \addcontentsline{toc}{chapter}{Bibliography}% Add to the TOC
-    \bibliography{thesis}
+    \bibliography{thesis,esn,word2vec}
 \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%

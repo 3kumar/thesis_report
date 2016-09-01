@@ -1,4 +1,20 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{confusion_martrix:1998}
+Glossary of terms.
+\newblock {\em Mach. Learn.}, 30(2-3):271--274, February 1998.
+
+\bibitem{conll:2005}
+Xavier Carreras and Llu\'{\i}s M\`{a}rquez.
+\newblock Introduction to the conll-2005 shared task: Semantic role labeling.
+\newblock In {\em Proceedings of the Ninth Conference on Computational Natural
+  Language Learning}, CONLL '05, pages 152--164, Stroudsburg, PA, USA, 2005.
+  Association for Computational Linguistics.
+
+\bibitem{conll:2004}
+Xavier Carreras and Lluís Màrquez.
+\newblock Introduction to the conll-2004 shared task: Semantic role labeling,
+  2004.
 
 \bibitem{xavier:2013:RT}
 Xavier Hinaut and Peter~Ford Dominey.
@@ -14,6 +30,12 @@ Peter Koomen, Vasin Punyakanok, Dan Roth, and Wen-tau Yih.
   Language Learning}, CONLL '05, pages 181--184, Stroudsburg, PA, USA, 2005.
   Association for Computational Linguistics.
 
+\bibitem{macro_average:2005}
+Arzucan {\"O}zg{\"u}r, Levent {\"O}zg{\"u}r, and Tunga G{\"u}ng{\"o}r.
+\newblock {\em Text Categorization with Class-Based and Corpus-Based Keyword
+  Selection}, pages 606--615.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2005.
+
 \bibitem{pradhan:2005}
 Sameer Pradhan, Kadri Hacioglu, Wayne Ward, James~H. Martin, and Daniel
   Jurafsky.
@@ -21,6 +43,23 @@ Sameer Pradhan, Kadri Hacioglu, Wayne Ward, James~H. Martin, and Daniel
 \newblock In {\em Proceedings of the Ninth Conference on Computational Natural
   Language Learning}, CONLL '05, pages 217--220, Stroudsburg, PA, USA, 2005.
   Association for Computational Linguistics.
+
+\bibitem{classification_scores:2009}
+Marina Sokolova and Guy Lapalme.
+\newblock A systematic analysis of performance measures for classification
+  tasks.
+\newblock {\em Inf. Process. Manage.}, 45(4):427--437, July 2009.
+
+\bibitem{accuracy_paradox_1:2008}
+Ciza Thomas and N.~Balakrishnan.
+\newblock Improvement in minority attack detection with skewness in network
+  traffic, 2008.
+
+\bibitem{accuracy_paradox_2:2014}
+Francisco~J Valverde-Albacete and Carmen Pel{\'a}ez-Moreno.
+\newblock 100\% classification accuracy considered harmful: The normalized
+  information transfer factor explains the accuracy paradox.
+\newblock {\em PloS one}, 9(1):e84217, 2014.
 
 \bibitem{end-to-end}
 Jie Zhou and Wei Xu.

@@ -1,0 +1,52 @@
+@article{w2v:parameter_learning,
+  title={word2vec Parameter Learning Explained},
+  author={Rong, Xin},
+  journal={arXiv preprint arXiv:1411.2738},
+  year={2014}
+}
+
+@article{w2v:language_similarities,
+  title={Exploiting similarities among languages for machine translation},
+  author={Mikolov, Tomas and Le, Quoc V and Sutskever, Ilya},
+  journal={arXiv preprint arXiv:1309.4168},
+  year={2013}
+}
+
+@article{w2v:mikolov_2013_distributed,
+  title={Distributed representations of words and phrases and their compositionality},
+  author={Mikolov, T and Dean, J},
+  journal={Advances in neural information processing systems},
+  year={2013}
+}
+
+@article{w2v:mikolov_2013_efficient,
+  title={Efficient estimation of word representations in vector space},
+  author={Mikolov, Tomas and Chen, Kai and Corrado, Greg and Dean, Jeffrey},
+  journal={arXiv preprint arXiv:1301.3781},
+  year={2013}
+}
+
+@inproceedings{w2v:gensim_api,
+      title = {{Software Framework for Topic Modelling with Large Corpora}},
+      author = {Radim {\v R}eh{\r u}{\v r}ek and Petr Sojka},
+      booktitle = {{Proceedings of the LREC 2010 Workshop on New
+           Challenges for NLP Frameworks}},
+      pages = {45--50},
+      year = 2010,
+      month = May,
+      day = 22,
+      publisher = {ELRA},
+      address = {Valletta, Malta},
+      note={\url{http://is.muni.cz/publication/884893/en}},
+      language={English}
+}
+
+@inproceedings{w2v:regularities_in_word_representations,
+author = {Tomas Mikolov, Scott Wen-tau Yih, Geoffrey Zweig},
+title = {Linguistic Regularities in Continuous Space Word Representations},
+booktitle = {Proceedings of the 2013 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (NAACL-HLT-2013)},
+year = {2013},
+month = {May},
+publisher = {Association for Computational Linguistics},
+url = {https://www.microsoft.com/en-us/research/publication/linguistic-regularities-in-continuous-space-word-representations/}
+}

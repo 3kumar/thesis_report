@@ -15,22 +15,21 @@
 \BOOKMARK [1][-]{section.4.1}{4.1 Proposed Model}{chapter.4}% 15
 \BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Model Variant-1}{section.4.1}% 16
 \BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Model Variant-2}{section.4.1}% 17
-\BOOKMARK [1][-]{section.4.2}{4.2 Comparision of Model Variants}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.3}{4.3 Dataset and pre-processing}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Corpus For TRA Task}{section.4.3}% 20
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Corpus For Training Word2Vec Model}{section.4.3}% 21
-\BOOKMARK [1][-]{section.4.4}{4.4 Word Embeddings}{chapter.4}% 22
-\BOOKMARK [0][]{chapter.5}{5 Experiments and Results}{}% 23
-\BOOKMARK [1][-]{section.5.1}{5.1 Input and Ouput Coding}{chapter.5}% 24
-\BOOKMARK [1][-]{section.5.2}{5.2 Experiments}{chapter.5}% 25
-\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Experiment-1: Learning thematic roles}{section.5.2}% 26
-\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Experiment-2: Generalization Capabilities}{section.5.2}% 27
-\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Experiment-3: Effect of Corpus structure}{section.5.2}% 28
-\BOOKMARK [2][-]{subsection.5.2.4}{5.2.4 Experiment-4: Effect of Reservoir size}{section.5.2}% 29
-\BOOKMARK [2][-]{subsection.5.2.5}{5.2.5 Experiment-5: Effect of Corpus size}{section.5.2}% 30
-\BOOKMARK [2][-]{subsection.5.2.6}{5.2.6 Experiment-6: Online reanalysis of sentences}{section.5.2}% 31
-\BOOKMARK [0][]{chapter.6}{6 Conclusion And Future Work}{}% 32
-\BOOKMARK [0][]{appendix.A}{A Nomenclature}{}% 33
-\BOOKMARK [0][]{appendix.B}{B Additional Proofs}{}% 34
-\BOOKMARK [0][]{appendix.C}{C Complete Simulation Results}{}% 35
-\BOOKMARK [0][]{appendix.C}{Bibliography}{}% 36
+\BOOKMARK [1][-]{section.4.2}{4.2 Dataset and pre-processing}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Corpus For TRA Task}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Corpus For Training Word2Vec Model}{section.4.2}% 20
+\BOOKMARK [1][-]{section.4.3}{4.3 Obtaining Word Embeddings}{chapter.4}% 21
+\BOOKMARK [0][]{chapter.5}{5 Experiments and Results}{}% 22
+\BOOKMARK [1][-]{section.5.1}{5.1 Input and Ouput Coding}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.2}{5.2 Experiments}{chapter.5}% 24
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Experiment-1: Learning thematic roles}{section.5.2}% 25
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Experiment-2: Generalization Capabilities}{section.5.2}% 26
+\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Experiment-3: Effect of Corpus structure}{section.5.2}% 27
+\BOOKMARK [2][-]{subsection.5.2.4}{5.2.4 Experiment-4: Effect of Reservoir size}{section.5.2}% 28
+\BOOKMARK [2][-]{subsection.5.2.5}{5.2.5 Experiment-5: Effect of Corpus size}{section.5.2}% 29
+\BOOKMARK [2][-]{subsection.5.2.6}{5.2.6 Experiment-6: Online re-analysis of sentences}{section.5.2}% 30
+\BOOKMARK [0][]{chapter.6}{6 Conclusion And Future Work}{}% 31
+\BOOKMARK [0][]{appendix.A}{A Nomenclature}{}% 32
+\BOOKMARK [0][]{appendix.B}{B Additional Proofs}{}% 33
+\BOOKMARK [0][]{appendix.C}{C Complete Simulation Results}{}% 34
+\BOOKMARK [0][]{appendix.C}{Bibliography}{}% 35
