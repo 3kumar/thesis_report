@@ -4,50 +4,59 @@ The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis.bib
 Warning--entry type for "accuracy_paradox_1:2008" isn't style-file defined
---line 132 of file thesis.bib
+--line 290 of file thesis.bib
 Database file #2: esn.bib
+Warning--string name "scholarpedia" is undefined
+--line 5 of file esn.bib
 Database file #3: word2vec.bib
+Warning--I didn't find a database entry for "w2v:mikolov_2013_efficien"
+Warning--I didn't find a database entry for "tra:tra:xavier_hri"
+Warning--to sort, need author or key in w2v:tensor_flow
 Warning--empty author in confusion_martrix:1998
+Warning--empty journal in esn:scholarpedia:2007
+Warning--empty journal in esn:jaeger_tutorial
+Warning--empty year in esn:jaeger_tutorial
+Warning--can't use both author and editor fields in esn:practical_guide
 Warning--can't use both author and editor fields in macro_average:2005
-You've used 11 entries,
+You've used 42 entries,
             2118 wiz_defined-function locations,
-            576 strings with 6312 characters,
-and the built_in function-call counts, 4002 in all, are:
-= -- 406
-> -- 161
-< -- 4
-+ -- 64
-- -- 52
-* -- 272
-:= -- 619
-add.period$ -- 33
-call.type$ -- 11
-change.case$ -- 59
+            749 strings with 12278 characters,
+and the built_in function-call counts, 14992 in all, are:
+= -- 1496
+> -- 648
+< -- 13
++ -- 264
+- -- 213
+* -- 1005
+:= -- 2381
+add.period$ -- 132
+call.type$ -- 42
+change.case$ -- 229
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 163
-empty$ -- 333
-format.name$ -- 52
-if$ -- 877
+cite$ -- 49
+duplicate$ -- 608
+empty$ -- 1222
+format.name$ -- 213
+if$ -- 3229
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 10
-newline$ -- 55
-num.names$ -- 20
-pop$ -- 69
+int.to.str$ -- 42
+missing$ -- 42
+newline$ -- 209
+num.names$ -- 82
+pop$ -- 269
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 190
 quote$ -- 0
-skip$ -- 132
+skip$ -- 452
 stack$ -- 0
-substring$ -- 264
-swap$ -- 49
-text.length$ -- 4
+substring$ -- 969
+swap$ -- 165
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 42
-warning$ -- 2
-while$ -- 38
-width$ -- 13
-write$ -- 124
-(There were 3 warnings)
+type$ -- 162
+warning$ -- 7
+while$ -- 143
+width$ -- 44
+write$ -- 458
+(There were 11 warnings)

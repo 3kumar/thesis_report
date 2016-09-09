@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.30)  1 SEP 2016 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.6)  9 SEP 2016 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -636,20 +636,20 @@ LaTeX Warning: Label `sec:urheber' multiply defined.
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 173.
-LaTeX Font Info:    ... okay on input line 173.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 174.
+LaTeX Font Info:    ... okay on input line 174.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count161
@@ -718,7 +718,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring OFF on input line 173.
+Package hyperref Info: Link coloring OFF on input line 174.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -728,32 +728,32 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count168
 )
-LaTeX Info: Redefining \ref on input line 173.
-LaTeX Info: Redefining \pageref on input line 173.
-LaTeX Info: Redefining \nameref on input line 173.
+LaTeX Info: Redefining \ref on input line 174.
+LaTeX Info: Redefining \pageref on input line 174.
+LaTeX Info: Redefining \nameref on input line 174.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write5
 \openout5 = `thesis.out'.
 
 
-<./src/uhhLogoL.pdf, id=143, 486.81876pt x 158.5925pt>
+<./src/uhhLogoL.pdf, id=195, 486.81876pt x 158.5925pt>
 File: ./src/uhhLogoL.pdf Graphic file (type pdf)
 
 <use ./src/uhhLogoL.pdf>
-Package pdftex.def Info: ./src/uhhLogoL.pdf used on input line 187.
+Package pdftex.def Info: ./src/uhhLogoL.pdf used on input line 188.
 (pdftex.def)             Requested size: 241.84842pt x 78.78786pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 222.
+LaTeX Font Info:    Try loading font information for U+msa on input line 223.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 222.
+LaTeX Font Info:    Try loading font information for U+msb on input line 223.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 222.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 223.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -769,23 +769,26 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
- [6] (./thesis.lof
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [6] (./thesis.lof)
+\tf@lof=\write7
+\openout7 = `thesis.lof'.
 
  [7
 
 
-])
-\tf@lof=\write7
-\openout7 = `thesis.lof'.
+] [8
 
+] (./thesis.lot
+Overfull \hbox (3.32253pt too wide) in paragraph at lines 12--12
+ [][] [][]\OT1/cmr/m/n/12 Generalization er-ror in sen-tence con-tin-u-ous lear
+n-ing mode for corpus- 
+ []
 
-[8] (./thesis.lot)
+)
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
 
  [9
-
 
 ] [10
 
@@ -793,282 +796,328 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Chapter 1.
 [1
 
-] [2]) [3] [4
+] [2]
+Underfull \vbox (badness 3168) has occurred while \output is active []
 
-] (./2basics.tex
+ [3])
+[4] (./2basics.tex
 Chapter 2.
-<./src/cbow.jpg, id=374, 987.2082pt x 585.6279pt>
+<./src/cbow.jpg, id=449, 987.2082pt x 585.6279pt>
 File: ./src/cbow.jpg Graphic file (type jpg)
  <use ./src/cbow.jpg>
-Package pdftex.def Info: ./src/cbow.jpg used on input line 8.
+Package pdftex.def Info: ./src/cbow.jpg used on input line 9.
 (pdftex.def)             Requested size: 335.33002pt x 198.92319pt.
 
-<./src/sg.jpg, id=375, 1123.0758pt x 1788.2007pt>
+<./src/sg.jpg, id=450, 1123.0758pt x 1788.2007pt>
 File: ./src/sg.jpg Graphic file (type jpg)
  <use ./src/sg.jpg>
-Package pdftex.def Info: ./src/sg.jpg used on input line 15.
+Package pdftex.def Info: ./src/sg.jpg used on input line 16.
 (pdftex.def)             Requested size: 178.68472pt x 284.5081pt.
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ¶ in font cmr12!
  [5
 
+
 ]
 [6 <./src/cbow.jpg>] [7 <./src/sg.jpg>] [8]
-<./src/linear-relationships.png, id=414, 90.63863pt x 31.73857pt>
+<./src/linear-relationships.png, id=503, 90.63863pt x 31.73857pt>
 File: ./src/linear-relationships.png Graphic file (type png)
 
 <use ./src/linear-relationships.png>
-Package pdftex.def Info: ./src/linear-relationships.png used on input line 103.
+Package pdftex.def Info: ./src/linear-relationships.png used on input line 106.
 
 (pdftex.def)             Requested size: 335.33424pt x 117.43953pt.
 
-<./src/word2vec_translation.png, id=415, 40.41098pt x 28.1853pt>
+<./src/word2vec_clustering.png, id=504, 586.8324pt x 442.2924pt>
+File: ./src/word2vec_clustering.png Graphic file (type png)
+
+<use ./src/word2vec_clustering.png>
+Package pdftex.def Info: ./src/word2vec_clustering.png used on input line 113.
+(pdftex.def)             Requested size: 335.33424pt x 252.74367pt.
+
+<./src/word2vec_translation.png, id=509, 40.41098pt x 28.1853pt>
 File: ./src/word2vec_translation.png Graphic file (type png)
 
 <use ./src/word2vec_translation.png>
-Package pdftex.def Info: ./src/word2vec_translation.png used on input line 110.
+Package pdftex.def Info: ./src/word2vec_translation.png used on input line 122.
 
-(pdftex.def)             Requested size: 335.33424pt x 233.91066pt.
- [9 <./src/linear-relationships.png> <./src/word2vec_translation.png>]
-<./src/esn_architecture.jpg, id=422, 1195.1049pt x 514.0806pt>
+(pdftex.def)             Requested size: 335.37213pt x 233.91066pt.
+ [9 <./src/linear-relationships.png> <./src/word2vec_clustering.png>]
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [10 <./src/word2vec_translation.png>]
+<./src/esn_architecture.jpg, id=539, 1195.1049pt x 514.0806pt>
 File: ./src/esn_architecture.jpg Graphic file (type jpg)
 
 <use ./src/esn_architecture.jpg>
-Package pdftex.def Info: ./src/esn_architecture.jpg used on input line 130.
+Package pdftex.def Info: ./src/esn_architecture.jpg used on input line 141.
 (pdftex.def)             Requested size: 335.33424pt x 144.23967pt.
- [10] [11 <./src/esn_architecture.jpg>]
-Overfull \hbox (2.62062pt too wide) in paragraph at lines 159--160
-[]\OT1/cmr/m/n/12 ESN is ini-tial-ized with a reser-voir of size $\OML/cmm/m/it
-/12 N[]$ \OT1/cmr/m/n/12 con-tain-ing leaky-integrated discrete-
- []
-
-) [12] [13] [14
+ [11 <./src/esn_architecture.jpg>] [12])
+[13] [14
 
 ] (./openIssues.tex
 Chapter 3.
 
-Overfull \hbox (13.99156pt too wide) in paragraph at lines 5--5
-[]\OT1/cmr/bx/n/17.28 Grammatical Con-struc-tion and The-matic Role
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 5.
 
-[15
 
-] [16]
-Overfull \hbox (35.54128pt too wide) in paragraph at lines 108--114
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\theta' on input line 5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 5.
+
+<./src/grammatical_construction.jpg, id=588, 204.34343pt x 94.79414pt>
+File: ./src/grammatical_construction.jpg Graphic file (type jpg)
+
+<use ./src/grammatical_construction.jpg>
+Package pdftex.def Info: ./src/grammatical_construction.jpg used on input line 
+11.
+(pdftex.def)             Requested size: 214.67915pt x 99.58884pt.
+
+<./src/xavier_model.jpg, id=589, 1252.4391pt x 754.017pt>
+File: ./src/xavier_model.jpg Graphic file (type jpg)
+
+<use ./src/xavier_model.jpg>
+Package pdftex.def Info: ./src/xavier_model.jpg used on input line 34.
+(pdftex.def)             Requested size: 335.33424pt x 201.8845pt.
+ [15
+
+] [16 <./src/grammatical_construction.jpg> <./src/xavier_model.jpg>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 41.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\theta' on input line 41.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 41.
+
+[17]
+Overfull \hbox (35.54128pt too wide) in paragraph at lines 122--128
 [][] 
  []
 
-[17] [18]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-) [19] [20
-
-] (./3approach.tex
+[18]) [19] [20] (./3approach.tex
 Chapter 4.
-<./src/model_arch.jpg, id=521, 1195.1049pt x 140.9265pt>
+<./src/model_arch.jpg, id=670, 1195.1049pt x 140.9265pt>
 File: ./src/model_arch.jpg Graphic file (type jpg)
 
 <use ./src/model_arch.jpg>
-Package pdftex.def Info: ./src/model_arch.jpg used on input line 11.
+Package pdftex.def Info: ./src/model_arch.jpg used on input line 9.
 (pdftex.def)             Requested size: 335.33424pt x 39.54085pt.
  [21
 
+
  <./src/model_arch.jpg>]
-<./src/model_variant_1.jpg, id=532, 1195.1049pt x 747.9945pt>
-File: ./src/model_variant_1.jpg Graphic file (type jpg)
+<./src/w2v_esn_model.jpg, id=682, 1252.4391pt x 754.017pt>
+File: ./src/w2v_esn_model.jpg Graphic file (type jpg)
 
-<use ./src/model_variant_1.jpg>
-Package pdftex.def Info: ./src/model_variant_1.jpg used on input line 26.
-(pdftex.def)             Requested size: 335.33424pt x 209.87074pt.
- [22] [23 <./src/model_variant_1.jpg>] [24]
-<./src/model_variant_2.jpg, id=563, 939.7509pt x 458.1918pt>
-File: ./src/model_variant_2.jpg Graphic file (type jpg)
+<use ./src/w2v_esn_model.jpg>
+Package pdftex.def Info: ./src/w2v_esn_model.jpg used on input line 26.
+(pdftex.def)             Requested size: 335.33424pt x 201.8845pt.
+ [22 <./src/w2v_esn_model.jpg>] [23]
+<./src/w2v_esn_variant.jpg, id=711, 939.7509pt x 458.1918pt>
+File: ./src/w2v_esn_variant.jpg Graphic file (type jpg)
 
-<use ./src/model_variant_2.jpg>
-Package pdftex.def Info: ./src/model_variant_2.jpg used on input line 74.
+<use ./src/w2v_esn_variant.jpg>
+Package pdftex.def Info: ./src/w2v_esn_variant.jpg used on input line 74.
 (pdftex.def)             Requested size: 335.33424pt x 163.5017pt.
- [25]
-Underfull \hbox (badness 10000) in paragraph at lines 89--106
+ [24] [25 <./src/w2v_esn_variant.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 93--110
 
  []
 
+[26] [27]
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+ <./src/meaning_relations.png, id=763, 178.14555pt x 109.1277pt>
+File: ./src/meaning_relations.png Graphic file (type png)
 
-Underfull \vbox (badness 2205) has occurred while \output is active []
+<use ./src/meaning_relations.png>
+Package pdftex.def Info: ./src/meaning_relations.png used on input line 165.
+(pdftex.def)             Requested size: 335.33424pt x 205.4398pt.
+ [28]
 
- [26 <./src/model_variant_2.jpg>] [27]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
- [28] [29]) [30] (./4results.tex
+LaTeX Warning: Citation `w2v:mikolov_2013_efficien' on page 29 undefined on inp
+ut line 178.
+
+[29 <./src/meaning_relations.png>]
+Overfull \hbox (11.31404pt too wide) in paragraph at lines 180--181
+\OML/cmm/m/it/12 vec\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 France\OT1/cmr/m/n/12 ) +
+ \OML/cmm/m/it/12 vec\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Germany\OT1/cmr/m/n/12 )
+ \OMS/cmsy/m/n/12 ^^Y \OML/cmm/m/it/12 vec\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Ber
+lin\OT1/cmr/m/n/12 )$. While train-ing the model on Wikipedia
+ []
+
+) [30] (./4results.tex
 Chapter 5.
-
-LaTeX Warning: Reference `' on page 31 undefined on input line 9.
-
 [31
 
 
-]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ¶ in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ¶ in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ¶ in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ¶ in font cmr12!
- [32]
+] [32]
+Overfull \hbox (6.84483pt too wide) in paragraph at lines 95--95
+ []|\OT1/cmr/m/n/12 Support| 
+ []
 
-LaTeX Warning: Reference `' on page 33 undefined on input line 27.
-
-<./src/confusion_matrix.png, id=641, 1677.3867pt x 894.7026pt>
+[33] [34] <./src/confusion_matrix.png, id=822, 1677.3867pt x 894.7026pt>
 File: ./src/confusion_matrix.png Graphic file (type png)
 
 <use ./src/confusion_matrix.png>
-Package pdftex.def Info: ./src/confusion_matrix.png used on input line 92.
+Package pdftex.def Info: ./src/confusion_matrix.png used on input line 110.
 (pdftex.def)             Requested size: 419.16621pt x 223.57953pt.
+ [35 <./src/confusion_matrix.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 5288) has occurred while \output is active []
-
- [33]
-[34]
-Overfull \hbox (36.0462pt too wide) in paragraph at lines 114--146
- [] 
- []
-
-[35] <./src/reservoir_size_1.png, id=665, 1670.1597pt x 892.5345pt>
+ [36]
+<./src/reservoir_size_1.png, id=838, 1677.3867pt x 894.7026pt>
 File: ./src/reservoir_size_1.png Graphic file (type png)
 
 <use ./src/reservoir_size_1.png>
-Package pdftex.def Info: ./src/reservoir_size_1.png used on input line 156.
-(pdftex.def)             Requested size: 419.16621pt x 224.00468pt.
-
-<./src/reservoir_size_2.png, id=667, 1670.1597pt x 892.5345pt>
+Package pdftex.def Info: ./src/reservoir_size_1.png used on input line 166.
+(pdftex.def)             Requested size: 419.16621pt x 223.57953pt.
+ [37 <./src/reservoir_size_1.png>]
+<./src/reservoir_size_2.png, id=845, 1670.1597pt x 892.5345pt>
 File: ./src/reservoir_size_2.png Graphic file (type png)
 
 <use ./src/reservoir_size_2.png>
-Package pdftex.def Info: ./src/reservoir_size_2.png used on input line 165.
+Package pdftex.def Info: ./src/reservoir_size_2.png used on input line 175.
 (pdftex.def)             Requested size: 419.16621pt x 224.00468pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [36 <./src/confusion_matrix.png>] [37 <./src/reservoir_size_1.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
-
-Underfull \vbox (badness 1292) has occurred while \output is active []
-
  [38 <./src/reservoir_size_2.png>]
-<./src/corpus_size_1.png, id=686, 1677.3867pt x 894.7026pt>
+<./src/corpus_size_1.png, id=853, 1677.3867pt x 894.7026pt>
 File: ./src/corpus_size_1.png Graphic file (type png)
 
 <use ./src/corpus_size_1.png>
-Package pdftex.def Info: ./src/corpus_size_1.png used on input line 185.
+Package pdftex.def Info: ./src/corpus_size_1.png used on input line 195.
 (pdftex.def)             Requested size: 419.16621pt x 223.57953pt.
 
-<./src/corpus_size_xavier.png, id=687, 424.63971pt x 181.74408pt>
+<./src/corpus_size_xavier.png, id=854, 424.63971pt x 181.74408pt>
 File: ./src/corpus_size_xavier.png Graphic file (type png)
 
 <use ./src/corpus_size_xavier.png>
-Package pdftex.def Info: ./src/corpus_size_xavier.png used on input line 193.
+Package pdftex.def Info: ./src/corpus_size_xavier.png used on input line 203.
 (pdftex.def)             Requested size: 419.16621pt x 179.40582pt.
- [39 <./src/corpus_size_1.png> <./src/corpus_size_xavier.png>] <./src/act_analy
-sis_1.png, id=697, 1677.3867pt x 894.7026pt>
+ [39 <./src/corpus_size_1.png>]
+<./src/act_analysis_1.png, id=864, 1677.3867pt x 894.7026pt>
 File: ./src/act_analysis_1.png Graphic file (type png)
 
 <use ./src/act_analysis_1.png>
-Package pdftex.def Info: ./src/act_analysis_1.png used on input line 218.
+Package pdftex.def Info: ./src/act_analysis_1.png used on input line 228.
 (pdftex.def)             Requested size: 419.16621pt x 223.57953pt.
-
-<./src/act_analysis_2.png, id=698, 1677.3867pt x 894.7026pt>
+ [40 <./src/corpus_size_xavier.png>]
+<./src/act_analysis_2.png, id=875, 1677.3867pt x 894.7026pt>
 File: ./src/act_analysis_2.png Graphic file (type png)
 
 <use ./src/act_analysis_2.png>
-Package pdftex.def Info: ./src/act_analysis_2.png used on input line 232.
+Package pdftex.def Info: ./src/act_analysis_2.png used on input line 242.
 (pdftex.def)             Requested size: 419.16621pt x 223.57953pt.
 
-<./src/act_analysis_3.png, id=699, 1677.3867pt x 894.7026pt>
+<./src/act_analysis_3.png, id=876, 1677.3867pt x 894.7026pt>
 File: ./src/act_analysis_3.png Graphic file (type png)
 
 <use ./src/act_analysis_3.png>
-Package pdftex.def Info: ./src/act_analysis_3.png used on input line 239.
+Package pdftex.def Info: ./src/act_analysis_3.png used on input line 249.
 (pdftex.def)             Requested size: 419.16621pt x 223.57953pt.
-) [40] [41 <./src/act_analysis_1.png> <./src/act_analysis_2.png>] [42 <./src/ac
-t_analysis_3.png>] (./5conclusions.tex
+
+
+LaTeX Warning: Citation `tra:tra:xavier_hri' on page 41 undefined on input line
+ 257.
+
+
+LaTeX Warning: Citation `tra:tra:xavier_hri' on page 41 undefined on input line
+ 257.
+
+
+Underfull \vbox (badness 2582) has occurred while \output is active []
+
+ [41 <./src/act_analysis_1.png> <./src/act_analysis_2.png>]
+
+LaTeX Warning: Citation `tra:tra:xavier_hri' on page 42 undefined on input line
+ 259.
+
+) [42 <./src/act_analysis_3.png>] [43] [44
+
+] (./5conclusions.tex
 Chapter 6.
-) [43
-
-
-] [44
-
-] (./appA.tex
-Appendix A.
 ) [45
 
 ] [46
 
-] (./appB.tex
-Appendix B.
+] (./appA.tex
+Appendix A.
 ) [47
 
 ] [48
 
-] (./appC.tex
-Appendix C.
+] (./appB.tex
+Appendix B.
 ) [49
 
 ] [50
+
+] (./appC.tex
+Appendix C.
+) [51
+
+] [52
 
 ] (./thesis.bbl
 Missing character: There is no √ in font cmr12!
 Missing character: There is no ≠ in font cmr12!
 Missing character: There is no √ in font cmr12!
 Missing character: There is no † in font cmr12!
- [51
+ [53
 
-]) [52]
-Overfull \hbox (12.91634pt too wide) in paragraph at lines 342--343
+]
+Underfull \hbox (badness 1019) in paragraph at lines 84--88
+\OT1/cmr/m/n/12 Ex-plor-ing the ac-qui-si-tion and pro-duc-tion of gram-mat-i-c
+al con-struc-tions
+ []
+
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ú in font cmr12!
+Missing character: There is no ‚ in font cmr12!
+Missing character: There is no Ä in font cmr12!
+Missing character: There is no ù in font cmr12!
+[54]
+Underfull \hbox (badness 1616) in paragraph at lines 203--206
+[]\OT1/cmr/m/n/12 Xin Rong.  word2vec pa-ram-e-ter learn-ing ex-plained.  \OT1/
+cmr/m/it/12 arXiv preprint
+ []
+
+[55]) [56]
+Overfull \hbox (12.91634pt too wide) in paragraph at lines 343--344
 \OT1/cmr/m/n/12 Quellen -- be-nutzt habe. Alle Stellen, die w^^?ortlich oder si
 n-ngem^^?a^^Y aus Ver^^?offentlichun-
  []
 
-[53
+[57
 
 
-] [54] [55
+] [58] [59
 
-] [56]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 372.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 372.
+] [60]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 373.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 373.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 372.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 372.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 373.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 373.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2E1F1CCEC24A326361392656973CB50F;2686.
+(rerunfilecheck)             Checksum: 4DFC3C17727757185AB796D3F70D7670;3601.
 
 
 LaTeX Warning: There were undefined references.
@@ -1076,34 +1125,40 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 372.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 373.
  ) 
 Here is how much of TeX's memory you used:
- 12071 strings out of 494910
- 176266 string characters out of 6179836
- 315360 words of memory out of 5000000
- 14891 multiletter control sequences out of 15000+600000
- 14394 words of font info for 55 fonts, out of 8000000 for 9000
+ 12268 strings out of 494910
+ 180156 string characters out of 6179837
+ 328126 words of memory out of 5000000
+ 15023 multiletter control sequences out of 15000+600000
+ 19286 words of font info for 79 fonts, out of 8000000 for 9000
  37 hyphenation exceptions out of 8191
- 41i,19n,43p,1829b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis.pdf (66 pages, 12627782 bytes).
+ 41i,19n,43p,1894b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
+st, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on thesis.pdf (70 pages, 17652874 bytes).
 PDF statistics:
- 877 PDF objects out of 1000 (max. 8388607)
- 758 compressed objects within 8 object streams
- 204 named destinations out of 1000 (max. 500000)
- 366 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1101 PDF objects out of 1200 (max. 8388607)
+ 966 compressed objects within 10 object streams
+ 260 named destinations out of 1000 (max. 500000)
+ 490 words of extra memory for PDF output out of 10000 (max. 10000000)
 

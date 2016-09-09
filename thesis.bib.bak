@@ -1,3 +1,156 @@
+@article{rnn:gradiant_problem:bengio,
+  title={Learning long-term dependencies with gradient descent is difficult},
+  author={Bengio, Yoshua and Simard, Patrice and Frasconi, Paolo},
+  journal={IEEE transactions on neural networks},
+  volume={5},
+  number={2},
+  pages={157--166},
+  year={1994},
+  publisher={IEEE}
+}
+
+@article{crf:intro:sutton,
+  title={An introduction to conditional random fields},
+  author={Sutton, Charles and McCallum, Andrew},
+  journal={arXiv preprint arXiv:1011.4088},
+  year={2010}
+}
+
+@article{rnn:elman:1990,
+  title={Finding structure in time},
+  author={Elman, Jeffrey L},
+  journal={Cognitive science},
+  volume={14},
+  number={2},
+  pages={179--211},
+  year={1990},
+  publisher={Elsevier}
+}
+
+@book{k-fold,
+  title={An introduction to statistical learning},
+  author={James, Gareth and Witten, Daniela and Hastie, Trevor and Tibshirani, Robert},
+  volume={6},
+  year={2013},
+  publisher={Springer}
+}
+
+@article{tra:bates:1982,
+  title={Functional constraints on sentence processing: A cross-linguistic study},
+  author={Bates, Elizabeth and McNew, Sandra and MacWhinney, Brian and Devescovi, Antonella and Smith, Stan},
+  journal={Cognition},
+  volume={11},
+  number={3},
+  pages={245--299},
+  year={1982},
+  publisher={Elsevier}
+}
+
+@book{gc:goldberg:1995,
+  title={Constructions: A construction grammar approach to argument structure},
+  author={Goldberg, Adele E},
+  year={1995},
+  publisher={University of Chicago Press}
+}
+
+@inproceedings{tra:xavier_wermter:2014,
+  title={An Incremental Approach to Language Acquisition: Thematic Role Assignment with Echo State Networks},
+  author={Hinaut, Xavier and Wermter, Stefan},
+  booktitle={International Conference on Artificial Neural Networks},
+  pages={33--40},
+  year={2014},
+  organization={Springer}
+}
+
+@ARTICLE{tra:xavier_hri,  
+AUTHOR={Hinaut, Xavier and Petit, Maxime and Pointeau, Gregoire and Dominey, Peter Ford},   	 
+TITLE={Exploring the acquisition and production of grammatical constructions through human-robot interaction with echo state networks},      	
+JOURNAL={Frontiers in Neurorobotics},      	
+VOLUME={8},      
+PAGES={16},     	
+YEAR={2014},    	  
+URL={http://journal.frontiersin.org/article/10.3389/fnbot.2014.00016},       	
+DOI={10.3389/fnbot.2014.00016},      	
+ISSN={1662-5218},      
+}
+
+@inproceedings{srl:deep_NN,
+  title={Semantic Role Labeling Using Deep Neural Networks},
+  author={Paass, Gerhard and Pratap, Bhanu},
+  booktitle={The International Workshop on Representation Learning},
+  year={2014}
+}
+
+@article{srl:text_categorization:persson,
+  title={Text categorization using predicate--argument structures},
+  author={Persson, Jacob and Johansson, Richard and Nugues, Pierre},
+  journal={Proe. the},
+  volume={1},
+  pages={142--149},
+  year={2008}
+}
+
+@inproceedings{srl:sentiment:wang,
+  title={Automatic crime prediction using events extracted from twitter posts},
+  author={Wang, Xiaofeng and Gerber, Matthew S and Brown, Donald E},
+  booktitle={International Conference on Social Computing, Behavioral-Cultural Modeling, and Prediction},
+  pages={231--238},
+  year={2012},
+  organization={Springer}
+}
+
+@inproceedings{srl:info_extraction:hri,
+  title={Textual Inference and Meaning Representation in Human Robot Interaction},
+  author={Bastianelli, Emanuele and Castellucci, Giuseppe and Croce, Danilo and Basili, Roberto},
+  booktitle={Joint Symposium on Semantic Processing},
+  year={2013}
+}
+
+@inproceedings{srl:machine_translation,
+  title={Semantic role features for machine translation},
+  author={Liu, Ding and Gildea, Daniel},
+  booktitle={Proceedings of the 23rd International Conference on Computational Linguistics},
+  pages={716--724},
+  year={2010},
+  organization={Association for Computational Linguistics}
+}
+
+@inproceedings{charniak_parser:2000,
+  title={A maximum-entropy-inspired parser},
+  author={Charniak, Eugene},
+  booktitle={Proceedings of the 1st North American chapter of the Association for Computational Linguistics conference},
+  pages={132--139},
+  year={2000},
+  organization={Association for Computational Linguistics}
+}
+
+@inproceedings{srl:collobert:2008,
+  title={A unified architecture for natural language processing: Deep neural networks with multitask learning},
+  author={Collobert, Ronan and Weston, Jason},
+  booktitle={Proceedings of the 25th international conference on Machine learning},
+  pages={160--167},
+  year={2008},
+  organization={ACM}
+}
+
+@article{srl:collobert:2011,
+  title={Natural language processing (almost) from scratch},
+  author={Collobert, Ronan and Weston, Jason and Bottou, L{\'e}on and Karlen, Michael and Kavukcuoglu, Koray and Kuksa, Pavel},
+  journal={Journal of Machine Learning Research},
+  volume={12},
+  number={Aug},
+  pages={2493--2537},
+  year={2011}
+}
+
+@inproceedings{srl:pradhan:2004,
+  title={Shallow Semantic Parsing using Support Vector Machines.},
+  author={Pradhan, Sameer S and Ward, Wayne and Hacioglu, Kadri and Martin, James H and Jurafsky, Daniel},
+  booktitle={HLT-NAACL},
+  pages={233--240},
+  year={2004}
+}
+
 @inproceedings{Pradhan:2005,
  author = {Pradhan, Sameer and Hacioglu, Kadri and Ward, Wayne and Martin, James H. and Jurafsky, Daniel},
  title = {Semantic Role Chunking Combining Complementary Syntactic Views},
@@ -34,8 +187,6 @@
   booktitle={Proceedings of the Annual Meeting of the Association for Computational Linguistics},
   year={2015}
 }
-
-
 
 @article{xavier:2013:RT,
     author = {Hinaut, Xavier AND Dominey, Peter Ford},

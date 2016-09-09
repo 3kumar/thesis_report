@@ -5,6 +5,15 @@
   year={2014}
 }
 
+@misc{w2v:tensor_flow,
+	title = {Vector {Representations} of {Words}},
+	shorttitle = {Vector {Representations} of {Words}},
+	url = {https://www.tensorflow.org/versions/r0.10/tutorials/word2vec/index.html},
+	urldate = {2016-09-05},
+	journal = {Tensor Flow},
+	file = {Vector Representations of Words}
+}
+
 @article{w2v:language_similarities,
   title={Exploiting similarities among languages for machine translation},
   author={Mikolov, Tomas and Le, Quoc V and Sutskever, Ilya},
@@ -24,6 +33,14 @@
   author={Mikolov, Tomas and Chen, Kai and Corrado, Greg and Dean, Jeffrey},
   journal={arXiv preprint arXiv:1301.3781},
   year={2013}
+}
+
+@inproceedings{w2v:baroni:2014,
+  title={Don't count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors.},
+  author={Baroni, Marco and Dinu, Georgiana and Kruszewski, Germ{\'a}n},
+  booktitle={ACL (1)},
+  pages={238--247},
+  year={2014}
 }
 
 @inproceedings{w2v:gensim_api,

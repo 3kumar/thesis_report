@@ -1,8 +1,35 @@
 \begin{thebibliography}{10}
 
+\bibitem{w2v:tensor_flow}
+Vector {Representations} of {Words}.
+
 \bibitem{confusion_martrix:1998}
 Glossary of terms.
 \newblock {\em Mach. Learn.}, 30(2-3):271--274, February 1998.
+
+\bibitem{w2v:baroni:2014}
+Marco Baroni, Georgiana Dinu, and Germ{\'a}n Kruszewski.
+\newblock Don't count, predict! a systematic comparison of context-counting vs.
+  context-predicting semantic vectors.
+\newblock In {\em ACL (1)}, pages 238--247, 2014.
+
+\bibitem{srl:info_extraction:hri}
+Emanuele Bastianelli, Giuseppe Castellucci, Danilo Croce, and Roberto Basili.
+\newblock Textual inference and meaning representation in human robot
+  interaction.
+\newblock In {\em Joint Symposium on Semantic Processing}, 2013.
+
+\bibitem{tra:bates:1982}
+Elizabeth Bates, Sandra McNew, Brian MacWhinney, Antonella Devescovi, and Stan
+  Smith.
+\newblock Functional constraints on sentence processing: A cross-linguistic
+  study.
+\newblock {\em Cognition}, 11(3):245--299, 1982.
+
+\bibitem{rnn:gradiant_problem:bengio}
+Yoshua Bengio, Patrice Simard, and Paolo Frasconi.
+\newblock Learning long-term dependencies with gradient descent is difficult.
+\newblock {\em IEEE transactions on neural networks}, 5(2):157--166, 1994.
 
 \bibitem{conll:2005}
 Xavier Carreras and Llu\'{\i}s M\`{a}rquez.
@@ -16,12 +43,93 @@ Xavier Carreras and Lluís Màrquez.
 \newblock Introduction to the conll-2004 shared task: Semantic role labeling,
   2004.
 
+\bibitem{charniak_parser:2000}
+Eugene Charniak.
+\newblock A maximum-entropy-inspired parser.
+\newblock In {\em Proceedings of the 1st North American chapter of the
+  Association for Computational Linguistics conference}, pages 132--139.
+  Association for Computational Linguistics, 2000.
+
+\bibitem{esn:esn_crf}
+Sotirios~P Chatzis and Yiannis Demiris.
+\newblock The echo state conditional random field model for sequential data
+  modeling.
+\newblock {\em Expert Systems with Applications}, 39(11):10303--10309, 2012.
+
+\bibitem{srl:collobert:2011}
+Ronan Collobert, Jason Weston, L{\'e}on Bottou, Michael Karlen, Koray
+  Kavukcuoglu, and Pavel Kuksa.
+\newblock Natural language processing (almost) from scratch.
+\newblock {\em Journal of Machine Learning Research}, 12(Aug):2493--2537, 2011.
+
+\bibitem{rnn:elman:1990}
+Jeffrey~L Elman.
+\newblock Finding structure in time.
+\newblock {\em Cognitive science}, 14(2):179--211, 1990.
+
+\bibitem{gc:goldberg:1995}
+Adele~E Goldberg.
+\newblock {\em Constructions: A construction grammar approach to argument
+  structure}.
+\newblock University of Chicago Press, 1995.
+
 \bibitem{xavier:2013:RT}
 Xavier Hinaut and Peter~Ford Dominey.
 \newblock Real-time parallel processing of grammatical structure in the
   fronto-striatal system: A recurrent network simulation study using reservoir
   computing.
 \newblock {\em PLoS ONE}, 8(2):1--18, 02 2013.
+
+\bibitem{tra:xavier_hri}
+Xavier Hinaut, Maxime Petit, Gregoire Pointeau, and Peter~Ford Dominey.
+\newblock Exploring the acquisition and production of grammatical constructions
+  through human-robot interaction with echo state networks.
+\newblock {\em Frontiers in Neurorobotics}, 8:16, 2014.
+
+\bibitem{hinaut_multiple_lang}
+Xavier Hinaut, Johannes Twiefel, Maxime Petit, France Bron, Peter Dominey, and
+  Stefan Wermter.
+\newblock A recurrent neural network for multiple language acquisition:
+  Starting with english and french.
+\newblock In {\em Proc. of the NIPS 2015 workshop on Cognitive Computation:
+  Integrating Neural and Symbolic Approaches}, 2015.
+
+\bibitem{tra:xavier_wermter:2014}
+Xavier Hinaut and Stefan Wermter.
+\newblock An incremental approach to language acquisition: Thematic role
+  assignment with echo state networks.
+\newblock In {\em International Conference on Artificial Neural Networks},
+  pages 33--40. Springer, 2014.
+
+\bibitem{esn:scholarpedia:2007}
+H.~Jaeger.
+\newblock {E}cho state network.
+\newblock 2(9):2330, 2007.
+\newblock {revision 151757}.
+
+\bibitem{esn:jaeger_tutorial}
+Herbert Jaeger.
+\newblock A tutorial on training recurrent neural networks, covering bppt,
+  rtrl, ekf and the" echo state network" approach.
+
+\bibitem{esn:jaeger:2001}
+Herbert Jaeger.
+\newblock The “echo state” approach to analysing and training recurrent
+  neural networks-with an erratum note.
+\newblock {\em Bonn, Germany: German National Research Center for Information
+  Technology GMD Technical Report}, 148:34, 2001.
+
+\bibitem{esn:NIPS:2003}
+Herbert Jaeger.
+\newblock Adaptive nonlinear system identification with echo state networks.
+\newblock In S.~Becker, S.~Thrun, and K.~Obermayer, editors, {\em Advances in
+  Neural Information Processing Systems 15}, pages 609--616. MIT Press, 2003.
+
+\bibitem{esn:optimization_leaky_neurons}
+Herbert Jaeger, Mantas Luko{\v s}evi{\v c}ius, Dan Popovici, and Udo Siewert.
+\newblock Optimization and applications of echo state networks with
+  leaky-integrator neurons.
+\newblock {\em Neural Networks}, 20(3):335--352, 2007.
 
 \bibitem{Koomen:2005}
 Peter Koomen, Vasin Punyakanok, Dan Roth, and Wen-tau Yih.
@@ -30,11 +138,45 @@ Peter Koomen, Vasin Punyakanok, Dan Roth, and Wen-tau Yih.
   Language Learning}, CONLL '05, pages 181--184, Stroudsburg, PA, USA, 2005.
   Association for Computational Linguistics.
 
+\bibitem{srl:machine_translation}
+Ding Liu and Daniel Gildea.
+\newblock Semantic role features for machine translation.
+\newblock In {\em Proceedings of the 23rd International Conference on
+  Computational Linguistics}, pages 716--724. Association for Computational
+  Linguistics, 2010.
+
+\bibitem{esn:practical_guide}
+Mantas Luko{\v{s}}evi{\v{c}}ius.
+\newblock {\em A Practical Guide to Applying Echo State Networks}, pages
+  659--686.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2012.
+
+\bibitem{w2v:mikolov_2013_distributed}
+T~Mikolov and J~Dean.
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock {\em Advances in neural information processing systems}, 2013.
+
+\bibitem{w2v:mikolov_2013_efficient}
+Tomas Mikolov, Kai Chen, Greg Corrado, and Jeffrey Dean.
+\newblock Efficient estimation of word representations in vector space.
+\newblock {\em arXiv preprint arXiv:1301.3781}, 2013.
+
+\bibitem{w2v:language_similarities}
+Tomas Mikolov, Quoc~V Le, and Ilya Sutskever.
+\newblock Exploiting similarities among languages for machine translation.
+\newblock {\em arXiv preprint arXiv:1309.4168}, 2013.
+
 \bibitem{macro_average:2005}
 Arzucan {\"O}zg{\"u}r, Levent {\"O}zg{\"u}r, and Tunga G{\"u}ng{\"o}r.
 \newblock {\em Text Categorization with Class-Based and Corpus-Based Keyword
   Selection}, pages 606--615.
 \newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2005.
+
+\bibitem{srl:text_categorization:persson}
+Jacob Persson, Richard Johansson, and Pierre Nugues.
+\newblock Text categorization using predicate--argument structures.
+\newblock {\em Proe. the}, 1:142--149, 2008.
 
 \bibitem{pradhan:2005}
 Sameer Pradhan, Kadri Hacioglu, Wayne Ward, James~H. Martin, and Daniel
@@ -44,22 +186,67 @@ Sameer Pradhan, Kadri Hacioglu, Wayne Ward, James~H. Martin, and Daniel
   Language Learning}, CONLL '05, pages 217--220, Stroudsburg, PA, USA, 2005.
   Association for Computational Linguistics.
 
+\bibitem{srl:pradhan:2004}
+Sameer~S Pradhan, Wayne Ward, Kadri Hacioglu, James~H Martin, and Daniel
+  Jurafsky.
+\newblock Shallow semantic parsing using support vector machines.
+\newblock In {\em HLT-NAACL}, pages 233--240, 2004.
+
+\bibitem{w2v:gensim_api}
+Radim {\v R}eh{\r u}{\v r}ek and Petr Sojka.
+\newblock {Software Framework for Topic Modelling with Large Corpora}.
+\newblock In {\em {Proceedings of the LREC 2010 Workshop on New Challenges for
+  NLP Frameworks}}, pages 45--50, Valletta, Malta, May 2010. ELRA.
+\newblock \url{http://is.muni.cz/publication/884893/en}.
+
+\bibitem{w2v:parameter_learning}
+Xin Rong.
+\newblock word2vec parameter learning explained.
+\newblock {\em arXiv preprint arXiv:1411.2738}, 2014.
+
 \bibitem{classification_scores:2009}
 Marina Sokolova and Guy Lapalme.
 \newblock A systematic analysis of performance measures for classification
   tasks.
 \newblock {\em Inf. Process. Manage.}, 45(4):427--437, July 2009.
 
+\bibitem{crf:intro:sutton}
+Charles Sutton and Andrew McCallum.
+\newblock An introduction to conditional random fields.
+\newblock {\em arXiv preprint arXiv:1011.4088}, 2010.
+
 \bibitem{accuracy_paradox_1:2008}
 Ciza Thomas and N.~Balakrishnan.
 \newblock Improvement in minority attack detection with skewness in network
   traffic, 2008.
+
+\bibitem{w2v:regularities_in_word_representations}
+Geoffrey~Zweig Tomas~Mikolov, Scott Wen-tau~Yih.
+\newblock Linguistic regularities in continuous space word representations.
+\newblock In {\em Proceedings of the 2013 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies (NAACL-HLT-2013)}. Association for Computational Linguistics,
+  May 2013.
+
+\bibitem{esn:learn_gs}
+Matthew~H. Tong, Adam~D. Bickett, Eric~M. Christiansen, and Garrison~W.
+  Cottrell.
+\newblock 2007 special issue: Learning grammatical structure with echo state
+  networks.
+\newblock {\em Neural Networks}, 20(3):424{\textendash}432, 2007.
 
 \bibitem{accuracy_paradox_2:2014}
 Francisco~J Valverde-Albacete and Carmen Pel{\'a}ez-Moreno.
 \newblock 100\% classification accuracy considered harmful: The normalized
   information transfer factor explains the accuracy paradox.
 \newblock {\em PloS one}, 9(1):e84217, 2014.
+
+\bibitem{srl:sentiment:wang}
+Xiaofeng Wang, Matthew~S Gerber, and Donald~E Brown.
+\newblock Automatic crime prediction using events extracted from twitter posts.
+\newblock In {\em International Conference on Social Computing,
+  Behavioral-Cultural Modeling, and Prediction}, pages 231--238. Springer,
+  2012.
 
 \bibitem{end-to-end}
 Jie Zhou and Wei Xu.
