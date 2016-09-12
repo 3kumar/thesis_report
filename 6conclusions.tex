@@ -1,0 +1,13 @@
+\chapter{Conclusion And Future Work}\label{conclusion}
+
+
+\section{Conclusion}
+
+To be written...
+1.The reason is that the word-embeddings in word2vec model are learned from the context words and thus word vector encapsulates the information about neighbouring words.  
+
+\section{Future Work}
+
+For this work we currenly used the combination of word2vec model and ESN. The Echo state network has an advantage of modelling sequential data, thus the sequential and temporal aspect of a sentence is taken into account in this study for thematic role assignment. But the dependencies between thematic roles of sentences were not taken into account for learning. To model the conditional probality distrubtion of the thematic roles, Conditional Random Fields (CRF);a log-linear model; can be used \cite{crf:intro:sutton}. CRFs has been the one of the most successful apporach used earlier as well for classification and sequential data labelling tasks \cite{end-to-end, esn:esn_crf}. Thus the Word2Vec-ESN model, proposed in this study, can be used with an additional CRF unit at the end to model the temporal dependencies between the input sentences conditional on the corresponding themactic roles. Doing so allows the resulting model to capture concealed temporal dynamics present in the sentences\cite{esn:esn_crf}. 
+
+Also several low dimensional word vector can be generated using the word2vec model. It was observed that with increase in word vector dimensions the accuracy on Semantic-Syntactic word relationship test set \cite{w2v:regularities_in_word_representations}  also increases till some point. However adding more dimensions results into reduced improvement \cite{w2v:mikolov_2013_efficient}. Although in the current study we used word a vector 50 dimension but the effect of other dimension were not explored. It would also be intersting to explore the effect of higher word vector dimension on the performance of Word2Vec-ESN model. Word2Vec word vectors obtained by training the model on one language corpus (say English) can also be translated to get the most similar word in any target language. This is achieved by linearly projecting the word vector of source languge on target language \cite{w2v:language_similarities}. Thus the Word2Vec-ESN language model can also be investigated for multiple language acquisition \cite{hinaut_multiple_lang}. 

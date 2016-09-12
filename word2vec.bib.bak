@@ -1,3 +1,11 @@
+@article{survey_multi_class,
+  title={Survey on multiclass classification methods},
+  author={Aly, Mohamed},
+  journal={Neural Netw},
+  pages={1--9},
+  year={2005}
+}
+
 @article{w2v:parameter_learning,
   title={word2vec Parameter Learning Explained},
   author={Rong, Xin},

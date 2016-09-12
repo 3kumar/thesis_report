@@ -248,8 +248,9 @@
 \section*{Abstract}\label{sec:abstract}
 %\fancyhead[LE,RO]{\it Abstract}
 %\addcontentsline{toc}{chapter}{\numberline{}Abstract}
-Humans have a remarkable capability of acquiring language and in particular more than one languages. More interestingly they learn it within the same neural computing substrate. But how does the structure of a sentence is mapped to its meaning within the brain is still an open issue?  
 
+Humans have a remarkable capability of acquiring language and in particular more than one languages. More interestingly they learn it within the same neural computing substrate. But how does the structure of a sentence is mapped to its meaning within the brain is still an open issue? To understand this process of language acquisition, several neural language models were proposed. Almost all the proposed model were either using syntactic parse trees to create handcrafted features or using localist vector representation of words to process the sentences. Similarly, Hinaut et al. \cite{end-to-end} proposed a $\theta RARes$ language acquisition model, for thematic role assignment which learned the thematic roles of the input sentences purely from the grammatical structure of the sentences. They also treated the words in the sentence as discrete atomic symbols which does not carry any semantic information about the words i.e. localist word representation was used. In this thesis, we propose an end-to-end neural language model, in an extension to $\theta RARes$ model, which takes into account the semantics of the words and temporal aspect of the input sentences. The model contains a word2vec unit, which generates the distributed vector representation of words which captures semantic and syntactic relationships and a recurrent neural network namely, Echo state Network, with fixed random connections, which is capable of modeling the sequential data. Thus the model takes a sentence as input which is processed word by word and as an output the meaning of an input sentence is obtained. Our results shows that the proposed model performs better than 
+the $\theta RARes$ model on thematic role assignment task. 
 
 
 % If the abstract ist not longer than half a page, then the German Zusammenfassung can be places on the same page
@@ -293,16 +294,16 @@ Hier die deutsche Zusammenfassung einf\"ugen (notwendig).
 \input{2basics.tex}
 \cleardoublepage
 
-\input{openIssues.tex}
+\input{3openIssues.tex}
 \cleardoublepage
 
-\input{3approach.tex}
+\input{4approach.tex}
 \cleardoublepage
 
-\input{4results.tex}
+\input{5results.tex}
 \cleardoublepage
 
-\input{5conclusions.tex}
+\input{6conclusions.tex}
 \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%

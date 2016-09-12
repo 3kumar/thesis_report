@@ -1,0 +1,142 @@
+\chapter{Approaching Word2Vec-ESN Language Model}\label{approach}
+
+\section{Word2Vec-ESN Language Model}
+
+To validate our hypothesis, we propose a Word2Vec-ESN language model for TRA task. The proposed model is inspired from the $\theta RARes$ model proposed by Hinaut et al. \cite{xavier:2013:RT} for TRA task. Word2Vec-ESN model is basically the combination of Word2Vec model and Echo State Network (ESN). Figure \ref{fig:model_arch}) shows the architecture of Word2Vec-ESN language model. The word2vec model is responsible for generating distributed embeddings of the words in the input sentences. The generated word embeddings are then used as an input to ESN, which further processes these embeddings to learn and predict the thematic roles of all semantic words in the input sentences. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\linewidth]{model_arch}
+\caption[Architecture of Word2Vec-ESN model]{\textbf{Architecture of Word2Vec-ESN model:} The model takes the words of the input sentence as an input across time. Word2Vec model generates the distributed vector representation of the input word. The generated word vector is then used by ESN for further processing and learns to predict the thematic roles of the input sentence.}
+\label{fig:model_arch}
+\end{figure}
+
+\subsection{Model initialization}
+
+Prior to use in the Word2Vec-ESN model the Word2Vec model was trained using skip-gram negative sampling \cite{w2v:mikolov_2013_distributed} approach on a general purpose dataset (e.g. Wikipedia) and the domain specific dataset. During the training, the word2vec model learns the low dimensional distributed embeddings for each word in the corpus vocabulary (see section \ref{get_word_embeddings}).
+
+The reservoir in ESN, composed of leaky integrator neurons and \textit{tanh} activation function, was sparsely and randomly initialized. A fixed fan-out of $F_{hh}$ and $F_{ih}$ is chosen for hidden-to-hidden and input-to-hidden connections respectively. In other words, each reservoir neuron is connected to $F_{hh}$ other reservoir neurons and each input neuron is connected to only $F_{ih}$ reservoir neurons. The input-to-hidden ($W^{in}$) and hidden-to-hidden ($W^{res}$) weights were generated sparse and randomly from a Gaussian distribution with mean 0 and variance 1. These weights once initialized are fixed and remains unchanged during training \cite{esn:scholarpedia:2007, esn:practical_guide}. 
+
+\subsection{Training model}
+
+Word2Vec-ESN language model treats the thematic role assignment task as a prediction problem. The objective of this model is to learn and predict the thematic roles of all semantic words in the input sentence. To evaluate the performance of this model meaning error and sentence error metrics were used (see section \ref{sec:evaluation_metrics_1}). The same evaluation metrics was used for evaluating $\theta RARes$ model \cite{xavier:2013:RT}. Thus it enable us to compare the performance of both the model.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\linewidth]{w2v_esn_model}
+\caption[Neural comprehension of Word2Vec-ESN Model]{\textbf{Word2Vec-ESN language model:} The figure shows the processing of a sentence by the model variant at time step 1. Nouns and verbs (specified in red and green respectively) are stored in a memory stack for interpreting the coded meaning. The word \textit{'John'} is input to word2vec model which generate a word vector of $E_{v}$ dimensions. The output vector is then input to ESN for further processing. During training, the readout units are teacher-forced with the coded meaning of the input sentence. During testing, the readout units generate the activations which code the predicted coded meaning of input sentence. The meaning: hit(John, ball, -) is decoded from coded meaning by mapping the thematic roles with nouns and verbs from memory stack. Adapted from \cite{xavier:2013:RT}} 
+\label{fig:model_variant_1}
+\end{figure}
+
+Figure \ref{fig:model_variant_1}), shows the neural comprehension fo Word2Vec-ESN model for thematic role assignment.
+
+During the training, sentences are presented to the model one at a time, word-by-word across time. Before presenting the sentence to the model all the semantic words (e.g. nouns, verbs etc.) in the sentence are identified and placed in FIFO memory stack (see fig. \ref{fig:model_variant_1}). This memory stack will be used later to decode the output of the model. The readout layer of the model is also teacher-forced with the coded meaning of the input sentence. The size of readout layer thus depends on the maximum number of semantic words (e.g. nouns and verbs) any sentence can have in the corpus. A semantic word in the sentence can have one of the four possible roles: Predicate (P), Agent (A), Object (O), Recipient (R). For example, if the sentences in the corpus have a maximum of $N_{sw}$ semantic words then the readout layer size would be $N_{sw} \times 4 $ neurons; where each output neuron encodes the thematic role of a semantic word. The output neurons have an activation of 1 if the corresponding thematic role is present for the sentence, -1 otherwise. The Word2Vec model receives the words from the input sentence across time and generates a word vector of $E_{v}$ dimensions which is then input to the ESN. The input layer of ESN uses this word vector as input features for learning and predicting thematic roles of the sentences. Thus the size of the input layer is same as the dimensionality of word vector i.e. $E_{v}$. The output of reservoir is accumulated for each time step during the presentation of a sentence. The accumulated reservoir states are then linearly combined with readout activations to learn the reservoir-to-readout ($W^{out}$) weights using ridge regression. The reservoir states of ESN are reset before the presentation of the consequent sentence. 
+
+This model variant can be operated in two learning modes so that it learns to extract the coded meaning of each noun with respect to a verb.
+
+\begin{enumerate}
+\setlength{\itemsep}{\smallskipamount}
+
+\item \textbf{Sentence Continuous Learning (SCL)}: In this learning mode learning takes place from the beginning of the sentence. In other words, the coded meaning of the input sentence is made available to model from the onset of the first word of the sentence. Thus, the regression is applied with teacher roles from the onset of the first word in the sentence \cite{xavier:2013:RT}. \label{eg:SCL}
+
+\item \textbf{Sentence Final Learning (SFL)}: In this mode, the learning takes places only at the end of the sentence \cite{xavier:2013:RT}. Hence, the teacher labels are only provided to the network at the end of sentence i.e. from the last word of the sentence to the final period. \label{eg:SFL}
+
+\end{enumerate} 
+
+\paragraph{Decoding Output: } As described earlier, coded meaning of a sentence is defined as the description of thematic roles for all the semantic words (e.g. nouns, verbs etc.) in the sentence. As the readout neurons of model codes the thematic roles for individual semantic words, the output activations produced by the model during testing for a sentence are thresholded at 0 for every semantic word and then the maximum of all activation between 4 possible roles (i.e. Predicate, Agent, Object, Recipient) is taken as the coded meaning of a semantic word \cite{xavier:2013:RT}. A semantic word is said to have an incorrect coded meaning if the winning readout neuron is not the correct role of the semantic word. If there is no activation above the threshold for a semantic word, then this semantic word is considered to have no coded meaning \cite{xavier:2013:RT}. The coded meaning of the sentence can then be decoded to the actual meaning by mapping the coded meaning to the semantic words from the FIFO memory stack(see fig \ref{fig:model_variant_1}).
+ 
+\subsection{Evaluation Metrics}\label{sec:evaluation_metrics_1}
+
+To evaluate the performance of the model we used the same two error measures that were used by Hianut et al.\cite{xavier:2013:RT} for TRA task: the Meaning Error (ME) and the Sentence Error (SE). Meaning error is the percentage of semantic words with incorrect coded meaning, whereas the sentence error is the percentage of sentences having at least one semantic word with incorrect coded meaning. Both the error measure are related but there is no strict corelation between them \cite{xavier:2013:RT}. Sentence error is a more stricter measure than meaning error to evaluate model performance because a meaning error of $5\%$ cannot be used to estimate the sentence error, as these $5\%$ incorrect words can be from just one sentence or several sentences. 
+
+To evaluate the model not all the readout neurons are considered i.e. if a sentence have only 3 semantic words then only readout neurons corresponding to these two semantic words were analyzed \cite{xavier:2013:RT} and remaining coded meaning of remaining neurons are ignored. If there are more than one verb, in a sentence then each semantic word can have possible role with respect to each verb. 
+
+\section{Variant of Word2Vec-ESN Model }\label{sec:model_variant}
+
+To ensure the objectivity of our findings we propose a variant of the proposed Word2Vec-ESN language model. Figure \ref{fig:model_variant_2} illustrates the functional organisation of this model variant for thematic role assignment task. Although the model variant is architecturally (see fig. \ref{fig:model_arch}) similar to Word2Vec-ESN model, but varies in training objective and the way the sentences are processed. It treats the TRA task as a classification problem. The training objective of this model variant is to classify the words of the input sentences to one of the roles namely Predicate (P), Agent (A), Object (O), Recipient (R) and No-role (XX) and maximize the classification scores (i.e. F1-score, Precision, and Recall- see section-\ref{sec:evaluation_metrics_2} for each role.
+
+Two input features play an important role in this model variant: argument and predicate, with an argument describing the current word being processed and predicate, describes the verb with respect to which argument is processed. So, if there are $N_{v}$ verbs in a sentence then the same sentence is processed $N_{v}$ times. Each argument then takes a unique role for an argument-predicate pair. For example in the following sentence there are two predicates namely \textit{'chased'} and \textit{'ate'}. Thus this sentence will be processed twice and each argument will take a role for an argument-predicate pair \cite{end-to-end}.
+
+\begin{table}[!htb]
+\centering
+\label{tab:argument-predicate}
+\begin{tabular}{lccccccccc}
+Arguments $\rightarrow$ & the & dog & that & chased & the & cat & ate & the & rat \\
+Predicate('chased') 	 & XX  & A   & XX   & P      & XX  & O   & XX  & XX  & XX  \\
+Predicate('ate')    	 & XX  & A   & XX   & XX     & XX  & XX  & P   & XX  & O  
+\end{tabular}
+\end{table}
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=0.8\linewidth]{w2v_esn_variant}
+\caption[Variant of Word2Vec-ESN language model] {\textbf{Word2Vec-ESN Model Variant:} 
+The figure shows the process of a sentence in model variant at time step 1. At any instant of time, an argument (current word, marked in orange) and predicate (marked in green) is input to the model. Word2Vec model generates the word vectors of $E_{v}$ dimensions which are then concatenated to form a $2 \times E_{v}$ dimensions(shown in orange and green color). ESN takes the resultant vector for further processing. During learning, the readout neurons are presented with the role of input word (e.g. 'A' for Agent). The read-out weights (shown in dashed line) are learned during training. During testing the readout unit codes the role of semantic words, which are then accumulated and decoded to form the meaning \textit{hit(John,ball,--)} of the input sentence at the end. Inspired from \cite{xavier:2013:RT}
+}
+\label{fig:model_variant_2}
+\end{figure}
+
+\newpage
+\subsection{Training model variant}
+To train the model variant, training sentences are presented to the model sequentially. An input sentence is processed as many time as there are verbs in the sentence, forming multiple sequences. Thus the model takes  an argument-predicate pair across the time as an input. The readout layer has 5 neurons each coding for a role (P, A, O, R, XX). Thus during training, the role of the input argument-predicate pair is also teacher-forced to the model. An output neuron have an activation 1 if the input argument-predicate pair has the corresponding role, -1 otherwise. The Word2vec model initially receives an argument-predicate pair of the input sentence and generates the distributed embeddings for both the input words. The generated word embeddings are concatenated and then taken by ESN as an input. Thus the size of ESN input layer is $2 \times E_{v}$ where the first $E_{v}$ neurons takes the vector representation of the argument and remaining $E_{v}$ neurons for the predicate. The reservoir internal states are collected for an input sequence over time which will be used later for regression with the desired output. Reservoir-to-readout ($W^{out}$) weights are then learned by using ridge regression over collected reservoir states and the readout activations. Figure \ref{fig:model_variant_2} shows the processing of an example sentence by this model variant.
+
+\subsection{Decoding Output}
+
+Recall that the model variant process a sentence as many times as there are verbs in the sentence. Thus during testing, the output activation of the model is used to predict the role for an argument-predicate pair. The role having highest output activation is considered as the role of an argument-predicate pair \cite{survey_multi_class}. The role for all argument-predicate pairs is collected and the meaning of the sentence with respect to a verb can then be interpreted by filling up the tagged words in P(A, O, R). For example in the sentence "John hit the ball." as shown in figure \ref{fig:model_variant_2}, the roles for each word (i.e. A P XX O) is used to get the meaning of the sentence as "hit(John,ball,--)".
+
+\subsection{Evaluation Metrics}\label{sec:evaluation_metrics_2}
+
+To analyze the performance of this model variant on thematic role assignment task, the confusion matrix or contingency table \cite{confusion_martrix:1998} was used and classification scores: Accuracy, Precision, Recall, and F1-Score were calculated for all possible roles. The classification scores were then macro-averaged, to get a single real numbered scores. The reason for choosing macro-average is that it gives equal weights to all the roles, addressing the role imbalance problem \cite{macro_average:2005}. Higher the classification scores the better. The same evaluation metrics was also used for CoNLL-04 and CoNLL-05 semantic role labeling shared task \cite{conll:2004,conll:2005}.
+
+\begin{tabular}{l|l|c|c|c|c|c|}
+\multicolumn{2}{c}{}  &\multicolumn{5}{c}{Predicted Roles}\\
+\cline{3-7}
+\multicolumn{2}{c|}{} & \textbf{A} & \textbf{O} & \textbf{R} & \textbf{P} & \textbf{XX}\\
+\hhline{|~|*6-|}
+\multirow{5}{*}{True Roles}
+& \textbf{A}     & \cellcolor{gray!25}$TP_{A}$ & $E_{A-O}$ & $E_{A-R}$ & $E_{A-P}$ & $E_{A-XX}$ \\
+\hhline{~|*6-}
+& \textbf{O}     & $E_{O-A}$ &\cellcolor{gray!25} $TP_{O}$ & $E_{O-R}$ & $E_{O-P}$ & $E_{O-XX}$ \\
+\hhline{~|*6-}
+& \textbf{R}     & $E_{R-A}$ & $E_{R-0}$ & \cellcolor{gray!25}$TP_{R}$ & $E_{R-P}$ & $E_{R-XX}$ \\
+\hhline{~|*6-}
+& \textbf{P}     & $E_{P-A}$ & $E_{P-0}$ & $E_{P-R}$ & \cellcolor{gray!25}$TP_{P}$ & $E_{P-XX}$ \\
+\hhline{~|*6-}
+& \textbf{XX}     & $E_{XX-A}$ & $E_{XX-O}$ & $E_{XX-R}$ & $E_{XX-P}$ & \cellcolor{gray!25}$TP_{XX}$ \\
+\hhline{~|*6-}
+\end{tabular}\\
+
+The confusion matrix describes the predictions made by the model. The rows of the matrix correspond to the actual roles and the columns correspond the predictions made by the model. The diagonal elements of this matrix represent the number of words for which the predicted role is equal to the true role,  whereas all the non-diagonal elements represent the number of words which were labeled incorrectly. As the values of diagonal elements of the confusion matrix indicates the number of correct predictions so higher the values of diagonal elements the better.
+
+Using the confusion matrix accuracy can be calculated as the ratio of number of correctly labeled words to the total number of words (equation \ref{eqn:accuracy}). This accuracy measure specifies how often the classifier is correct \cite{classification_scores:2009}. 
+
+\begin{equation}\label{eqn:accuracy}
+Accuracy = \frac{\text{number of words correctly labelled}}{\text{total number of words}}
+\end{equation}
+ 
+However, accuracy measure can be distorting (because of accuracy paradox) when the dataset has words with large role imbalance as it gives high scores to models which just predict the most frequent class and cannot be used alone to evaluate the model performance \cite{accuracy_paradox_1:2008, accuracy_paradox_2:2014}. In our dataset, we have imbalanced roles as most of the words are labeled as "XX" (No Role) compared to other roles (P, A, O, R). Thus we needed additional measures such as Precision, Recall, and F1-score to evaluate the model. All these scores are reported as a value between 0 and 1. 
+
+\textit{Precision} is defined as ratio of True positive (TP) to False Positive(FP) and True Positive (equation \ref{eqn:precision}). It is the measure of the accuracy of a role provided that a specific role has been predicted \cite{classification_scores:2009}.
+
+\begin{equation}\label{eqn:precision}
+Precision = \frac{\text{True Positive}}{\text{True Positive + False Positive}}
+\end{equation}
+
+From the confusion matrix above, the precision for the role Agent(A) is be calculated as:
+
+\[Precision(A) = \frac{TP_{A}}{(TP_{A}+E_{O-A}+E_{R-A}+E_{P-A}+E_{XX-A})}\]
+
+\noindent \textit{Recall} is defined as the ratio of True Positive to True Positive and False Negative. It measures how good the model is in labeling the correct roles. It is also called \textit{'Sensitivity'} or \textit{'True Positive Rate'}. \cite{classification_scores:2009}.
+
+\begin{equation}\label{eqn:recall}
+Recall = \frac{\text{True Positive}}{\text{True Positive + False Negative}}
+\end{equation}
+
+Recall for the role 'A', from the above confusion matrix will be:
+\[Recall(A) = \frac{TP_{A}}{(TP_{A}+E_{A-O}+E_{A-R}+E_{A-P}+E_{A-XX})}\]
+
+\noindent F1-Score or (F1) is the harmonic mean of precision and recall. In other words, it represents the balance between the precision and recall. It takes false positive and false negative in account. This score is really useful whenever there is class imbalance in the dataset \cite{classification_scores:2009} and is calculated as:
+
+\begin{equation}\label{eqn:precision}
+F1 = 2\times \frac{\text{Precision} \times{Recall }}{\text{Precision + Recall}}
+\end{equation}

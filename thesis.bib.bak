@@ -9,6 +9,13 @@
   publisher={IEEE}
 }
 
+@inproceedings{hinaut_multiple_lang,
+  title={A Recurrent Neural Network for Multiple Language Acquisition: Starting with English and French},
+  author={Hinaut, Xavier and Twiefel, Johannes and Petit, Maxime and Bron, France and Dominey, Peter and Wermter, Stefan},
+  booktitle={Proc. of the NIPS 2015 workshop on Cognitive Computation: Integrating Neural and Symbolic Approaches},
+  year={2015}
+}
+
 @article{crf:intro:sutton,
   title={An introduction to conditional random fields},
   author={Sutton, Charles and McCallum, Andrew},
