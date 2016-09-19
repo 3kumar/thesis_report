@@ -6,6 +6,15 @@
   year={2005}
 }
 
+@inproceedings{w2v:glove,
+  title={Glove: Global Vectors for Word Representation.},
+  author={Pennington, Jeffrey and Socher, Richard and Manning, Christopher D},
+  booktitle={EMNLP},
+  volume={14},
+  pages={1532--43},
+  year={2014}
+}
+
 @article{w2v:parameter_learning,
   title={word2vec Parameter Learning Explained},
   author={Rong, Xin},
@@ -13,13 +22,13 @@
   year={2014}
 }
 
-@misc{w2v:tensor_flow,
+@online{w2v:tensor_flow,
+	author = {Google Inc.},
 	title = {Vector {Representations} of {Words}},
+	howpublished = {\url{https://www.tensorflow.org/versions/r0.10/tutorials/word2vec/index.html}},
 	shorttitle = {Vector {Representations} of {Words}},
-	url = {https://www.tensorflow.org/versions/r0.10/tutorials/word2vec/index.html},
-	urldate = {2016-09-05},
+	note = {Accessed: 2016-09-05},
 	journal = {Tensor Flow},
-	file = {Vector Representations of Words}
 }
 
 @article{w2v:language_similarities,

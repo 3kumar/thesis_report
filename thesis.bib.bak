@@ -1,3 +1,20 @@
+@inproceedings{word_vec:turian:2010,
+  title={Word representations: a simple and general method for semi-supervised learning},
+  author={Turian, Joseph and Ratinov, Lev and Bengio, Yoshua},
+  booktitle={Proceedings of the 48th annual meeting of the association for computational linguistics},
+  pages={384--394},
+  year={2010},
+  organization={Association for Computational Linguistics}
+}
+
+@inproceedings{word_vec:hinton:2009,
+  title={A scalable hierarchical distributed language model},
+  author={Mnih, Andriy and Hinton, Geoffrey E},
+  booktitle={Advances in neural information processing systems},
+  pages={1081--1088},
+  year={2009}
+}
+
 @article{rnn:gradiant_problem:bengio,
   title={Learning long-term dependencies with gradient descent is difficult},
   author={Bengio, Yoshua and Simard, Patrice and Frasconi, Paolo},
