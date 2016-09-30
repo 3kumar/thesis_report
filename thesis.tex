@@ -50,9 +50,9 @@
 \usepackage{enumitem}
 
 %\geometry{a4paper,outer=3.35cm}        % !!!Release version (Normal margins)
-%\geometry{a4paper,outer=2.5cm}         % !!!Print version (Additional margin on the left for the binding)
+\geometry{a4paper,outer=2.5cm}         % !!!Print version (Additional margin on the left for the binding)
 %\geometry{a4paper}                     % !!!Proofread version (Additional margin on the right for corrections)
-\geometry{a4paper,outer=3.15cm}         % !!!Draft version (Same margins on left and right)
+%\geometry{a4paper,outer=3.15cm}         % !!!Draft version (Same margins on left and right)
 %\geometry{paperheight=10.0in,paperwidth=6.4in,top=0.51in,left=0.3in}  % !!!Developer version (Minimal margins)
 
 \usepackage{graphicx}                   % Inclusion of graphics
@@ -66,6 +66,7 @@
 %HINT: subfigure may be outdated already - maybe try subfig instead 
 %\usepackage[font=footnotesize,labelfont=rm]{subfig}    % Pictures in a floating environment
 \usepackage{tabularx}                   % Tables with fixed width but variable rows
+\usepackage{tabulary}
 \usepackage{url,xspace,boxedminipage}   % Accurate display of URLs
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{booktabs,caption,fixltx2e}
@@ -110,9 +111,10 @@
 \hyphenation{whe-ther}                  % Manually use: "\-" in a word: Staats\-ver\-trag
 \numberwithin{equation}{section}
 %\lstloadlanguages{C}                   % Set the default language for listings
-\DeclareGraphicsExtensions{.pdf,.svg,.jpg,.png,.eps} % first try pdf, then eps, png and jpg
+\DeclareGraphicsExtensions{.pdf,.jpg,.png,.eps} % first try pdf, then eps, png and jpg
 \graphicspath{{./src/}}                 % Path to a folder where all pictures are located
 \pagestyle{fancy}                       % Use nicer header and footer
+
 
 % Redefine the environments for floating objects:
 \setcounter{topnumber}{3}

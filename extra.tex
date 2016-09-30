@@ -1,0 +1,33 @@
+As illustrated in Table \ref{tab:corpus_373_stats}, it can be seen that all the 10 model instances, correctly predicted the meaning of 146 and 160 sentence with reservoir size 500 and 1000 respectively. All the 10 instances the model failed to predicted the meaning of 99 and 96 sentences res. 
+
+Word2Vec-ESN predicted 146 and . 
+
+
+\begin{table}
+\centering
+\begin{threeparttable}
+\caption[Word2Vec-ESN model generalizing on new coprus]{Generalization error in SCL mode on corpus-373.}
+\label{tab:corpus_373_stats}
+\begin{tabularx}{\textwidth}{@{}lYYYY@{}}
+\toprule
+\multirow{2}{*}{ Percentage Failure}	& \multicolumn{2}{c}{Word2Vec-ESN Model} & \multicolumn{2}{c}{$\theta RARes$ Model} \\
+\cmidrule(lr){2-3}   \cmidrule(lr){4-5}
+    
+			 & N = 500		& N = 1000 		& N = 500 		& N = 1000 	 \\
+\midrule
+
+0 $\%$       & 146			& 160 			& 35 			& 98     \\ 
+10-50 $\%$   & 80 			& 68 			& 87 			& 55     \\ 
+60-90 $\%$   & 48 			& 49 			& 85			& 90     \\
+100 $\%$     & 99 			& 96			& 166			& 130    \\ 
+
+\bottomrule
+
+\end{tabularx}
+\begin{tablenotes}
+\small
+\item 
+
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
