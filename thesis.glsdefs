@@ -1,0 +1,180 @@
+\ifglsentryexists{esn}{}%
+{%
+\gls@defglossaryentry{esn}%
+{%
+name={ESN},%
+sort={ESN},%
+type={acronym},%
+first={Echo State Network\glsspace (ESN)},%
+firstplural={Echo State Networks\glsspace (ESNs)},%
+text={ESN},%
+plural={ESNs},%
+description={Echo State Network},%
+descriptionplural={Echo State Network\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Echo State Network},%
+longplural={Echo State Networks},%
+short={ESN},%
+shortplural={ESNs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{me}{}%
+{%
+\gls@defglossaryentry{me}%
+{%
+name={ME},%
+sort={ME},%
+type={acronym},%
+first={Meaning Error\glsspace (ME)},%
+firstplural={Meaning Errors\glsspace (MEs)},%
+text={ME},%
+plural={MEs},%
+description={Meaning Error},%
+descriptionplural={Meaning Error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Meaning Error},%
+longplural={Meaning Errors},%
+short={ME},%
+shortplural={MEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{se}{}%
+{%
+\gls@defglossaryentry{se}%
+{%
+name={SE},%
+sort={SE},%
+type={acronym},%
+first={Sentence Error\glsspace (SE)},%
+firstplural={Sentence Errors\glsspace (SEs)},%
+text={SE},%
+plural={SEs},%
+description={Sentence Error},%
+descriptionplural={Sentence Error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Sentence Error},%
+longplural={Sentence Errors},%
+short={SE},%
+shortplural={SEs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pr}{}%
+{%
+\gls@defglossaryentry{pr}%
+{%
+name={Pr},%
+sort={Pr},%
+type={acronym},%
+first={Precision\glsspace (Pr)},%
+firstplural={Precisions\glsspace (Prs)},%
+text={Pr},%
+plural={Prs},%
+description={Precision},%
+descriptionplural={Precision\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Precision},%
+longplural={Precisions},%
+short={Pr},%
+shortplural={Prs},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{re}{}%
+{%
+\gls@defglossaryentry{re}%
+{%
+name={Re},%
+sort={Re},%
+type={acronym},%
+first={Recall\glsspace (Re)},%
+firstplural={Recalls\glsspace (Res)},%
+text={Re},%
+plural={Res},%
+description={Recall},%
+descriptionplural={Recall\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Recall},%
+longplural={Recalls},%
+short={Re},%
+shortplural={Res},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{f1}{}%
+{%
+\gls@defglossaryentry{f1}%
+{%
+name={F1},%
+sort={F1},%
+type={acronym},%
+first={F1-Score\glsspace (F1)},%
+firstplural={F1-Scores\glsspace (F1s)},%
+text={F1},%
+plural={F1s},%
+description={F1-Score},%
+descriptionplural={F1-Score\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={F1-Score},%
+longplural={F1-Scores},%
+short={F1},%
+shortplural={F1s},%
+counter={page},%
+parent={},%
+%
+}%
+}%

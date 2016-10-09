@@ -16,7 +16,7 @@
 }
 
 @article{w2v:parameter_learning,
-  title={word2vec Parameter Learning Explained},
+  title={word2vec Parameter Learning Explained.},
   author={Rong, Xin},
   journal={arXiv preprint arXiv:1411.2738},
   year={2014}
@@ -28,7 +28,7 @@
 	howpublished = {\url{https://www.tensorflow.org/versions/r0.10/tutorials/word2vec/index.html}},
 	shorttitle = {Vector {Representations} of {Words}},
 	note = {Accessed: 2016-09-05},
-	journal = {Tensor Flow},
+	journal = {Tensor Flow}
 }
 
 @article{w2v:language_similarities,
