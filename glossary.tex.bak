@@ -22,7 +22,7 @@
 \acro{HRI}{Human Robot Interaction}
 
 \acro{SW}{Semantic Word}
-\acro{SG}{Skip Gram}
+\acro{SG}{Skip-Gram}
 \acro{TP}{True Positive}
 \acro{FP}{False Positive}
 \acro{FN}{False Negative}
@@ -40,7 +40,7 @@
 \acro{A}{Agent}
 \acro{P}{Predicate}
 \acro{O}{Object}
-\acro{R}{Recepient}
+\acro{R}{Recipient}
 
 \end{acronym}
 \end{multicols}
